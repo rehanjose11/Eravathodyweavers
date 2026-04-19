@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eravathody Handloom Weavers - Kerala</title>
-    <link rel="icon" type="image/x-icon" href="Asset 1.ico">
+    <title>The Craft - Eravathody Handloom Weavers</title>
+    <link rel="icon" type="image/x-icon" href="../homepage/imagesHP/Asset 1.ico">
     <!-- Google Fonts for Editorial Aesthetic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,11 +13,8 @@
         href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Syne:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <!-- Link external CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="craft.css">
 </head>
 
 <body>
@@ -26,17 +23,17 @@
     <header class="header">
         <!-- Navigation Bar click logo to home page -->
         <div class="logo">
-            <a href="#home">Eravathody Weavers</a>
+            <a href="../homepage/index.html">Eravathody Weavers</a>
         </div>
         <!-- Navigation Bar links -->
         <nav class="nav-menu">
             <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#craft">The Craft</a></li>
-                <li><a href="#weavers">Our Weavers</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="../homepage/index.html">Home</a></li>
+                <li><a href="../about/about.html">About</a></li>
+                <li><a href="../the craft/craft.html" class="active">The Craft</a></li>
+                <li><a href="../our weavers/weavers.html">Our Weavers</a></li>
+                <li><a href="../gallery/gallery.html">Gallery</a></li>
+                <li><a href="../homepage/index.html#contact">Contact Us</a></li>
             </ul>
         </nav>
         <div class="header__search">
@@ -54,155 +51,156 @@
     </header>
 
     <main>
-        <!-- Hero Banner: Brand Introduction and Core Identity -->
-        <section id="home" class="hero section-padding">
-            <div class="container fade-in">
-                <div class="hero__text text-center">
-                    <p class="hero__subtitle">The Living Legacy of Handloom</p>
-                    <h1 class="hero__title">ERAVATHODY WEAVERS</h1>
-                    <p class="hero__description">Rooted in Thiruvilwamala, Kerala — sustained through generations.</p>
-                </div>
-            </div>
-            <div class="hero__swipe-indicator">
-                <span class="hero__swipe-text">SCROLL DOWN</span>
-                <div class="hero__swipe-arrow"></div>
+        <!-- Craft Hero Section -->
+        <section class="craft-hero section-padding">
+            <div class="container fade-in text-center">
+                <p class="hero__subtitle">The Art of Handloom</p>
+                <h1 class="craft-hero__title">From Thread to Tradition</h1>
+                <p class="hero__description">Each fabric is born from a meticulous process refined over generations.
+                </p>
             </div>
         </section>
 
-        <!-- About Us Section -->
-        <section id="about" class="about section-padding bg-light">
-            <!-- Top corner decorative element -->
-            <div class="about__decorative">
-                <img src="gold.png" alt="Decorative element">
+        <!-- Introduction Section -->
+        <section class="craft-intro section-padding bg-light">
+            <div class="container fade-in">
+                <div class="craft-intro-content">
+                    <h2 class="text-center">The Journey of a Handloom Fabric</h2>
+                    <p class="about__description text-center">
+                        What appears as a seamless piece of fabric is actually the culmination of multiple intricate
+                        stages — each requiring specialized knowledge, precision, and years of experience. At
+                        Eravathody, we preserve these traditional techniques in their purest form.
+                    </p>
+                </div>
             </div>
-            <!-- Polaroid image -->
-            <div class="container fade-in about__grid">
-                <div class="about__image-column">
-                    <div class="about__polaroid">
-                        <img src="pic2.jpg" alt="Thiruwilvamala Handloom">
-                        <p class="about__polaroid-caption">Thiruwilvamala, Kerala</p>
+        </section>
+
+        <!-- Process Steps Section -->
+        <section class="process-section section-padding">
+            <div class="container">
+                <!-- Step 1: Winding -->
+                <div class="process-step fade-in">
+                    <div class="process-step__number">01</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Winding</h3>
+                        <p class="process-step__text">
+                            The journey begins with winding raw yarn from large hanks onto smaller bobbins or spools.
+                            This ensures uniform tension and makes the yarn manageable for subsequent processes. The
+                            winding must be done carefully to avoid knots or irregularities that could compromise the
+                            final fabric.
+                        </p>
                     </div>
                 </div>
-                <!-- About text -->
-                <div class="about__text-column">
-                    <h2>About Eravathody</h2>
-                    <p class="about__description">
-                        Founded in 1941 in the village of Thiruvilwamala, Kerala, the Eravathody Handloom Weavers’
-                        Co-operative Society sustains a generations-old weaving tradition.
-                    </p>
-                    <p class="about__description">
-                        Rooted in the Mudaliar community’s belief in Deiva Thozhil — weaving as a sacred duty — the
-                        society
-                        continues to preserve authentic handloom craftsmanship through collective effort and cultural
-                        integrity.
-                    </p>
-                    <a href="#about-more" class="btn btn-outline">Know More</a>
+
+                <!-- Step 2: Warping -->
+                <div class="process-step fade-in">
+                    <div class="process-step__number">02</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Warping</h3>
+                        <p class="process-step__text">
+                            In warping, hundreds of threads are arranged parallel to one another on a large warping
+                            frame. This creates the warp — the lengthwise threads that form the foundation of the
+                            fabric. Precision is critical; even a single misplaced thread can disrupt the entire weave
+                            pattern.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3: Sizing -->
+                <div class="process-step fade-in">
+                    <div class="process-step__number">03</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Sizing</h3>
+                        <p class="process-step__text">
+                            The warp threads are coated with a starch-based solution to strengthen them and reduce
+                            friction during weaving. This traditional sizing process protects delicate threads from
+                            breaking under the stress of the loom and ensures a smoother weaving experience.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4: Denting -->
+                <div class="process-step fade-in">
+                    <div class="process-step__number">04</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Denting</h3>
+                        <p class="process-step__text">
+                            Each warp thread is carefully drawn through the fine teeth of a metal comb-like structure
+                            called the reed. This process, known as denting, determines the density and spacing of the
+                            fabric. It requires a steady hand and sharp eyesight, often taking several hours for a
+                            single setup.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 5: Drafting -->
+                <div class="process-step fade-in">
+                    <div class="process-step__number">05</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Drafting</h3>
+                        <p class="process-step__text">
+                            The warp threads are then threaded through the heddles on the loom's shafts. This drafting
+                            process determines the weave pattern — whether plain, twill, or any intricate design. The
+                            arrangement of threads in the heddles dictates how the fabric will be structured.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 6: Weaving -->
+                <div class="process-step fade-in">
+                    <div class="process-step__number">06</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Weaving</h3>
+                        <p class="process-step__text">
+                            Finally, the weaver sits at the loom, using foot pedals to raise and lower the warp threads
+                            while passing the weft — the crosswise threads — through with a shuttle. The rhythm of the
+                            loom, the creak of the wooden frame, and the steady motion of the weaver's hands create the
+                            fabric inch by inch. This stage can take days or even weeks for a single piece.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 7: Finishing -->
+                <div class="process-step fade-in">
+                    <div class="process-step__number">07</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Finishing</h3>
+                        <p class="process-step__text">
+                            Once the fabric is removed from the loom, it undergoes finishing processes such as washing
+                            to remove the sizing, ironing for smoothness, and inspection for any flaws. The result is a
+                            handwoven fabric that carries the mark of skill, patience, and tradition.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== Know more about the craft ===== -->
-        <section class="craft-banner section-padding">
-            <div class="craft-banner-overlay"></div>
-            <div class="container fade-in">
-                <div class="craft-banner-content">
-                    <h2 class="craft-banner-title">The Craft of Eravathody</h2>
-                    <p class="craft-banner-desc">
-                        From winding and warping to the final woven fabric, each stage reflects discipline, precision,
-                        and inherited skill.
-                    </p>
-                    <!--Button-->
-                    <a href="#craft" class="btn btn-outline craft-banner-btn">Know More About the Craft &rarr;</a>
-                </div>
+        <!-- Philosophy Section -->
+        <section class="philosophy-section section-padding bg-light">
+            <div class="about__decorative">
+                <img src="../homepage/imagesHP/gold.png" alt="Decorative element">
             </div>
-        </section>
-
-        <!-- Meet the Artisans -->
-        <section id="weavers" class="artisan-section section-padding">
             <div class="container fade-in text-center">
-                <h2 class="artisan-title">The Hands Behind the Loom</h2>
-                <p class="artisan-subtext">The artisans of Eravathody carry forward a weaving tradition shaped by
-                    discipline, devotion, and shared responsibility.
-                    Each loom is guided by experience passed down through generations, sustaining a craft that remains
-                    deeply rooted in community.</p>
-                <div class="artisan-photo-wrapper">
-                    <img src="eravathody gang.png" alt="Eravathody Weavers Group" class="artisan-photo">
-                </div>
-                <a href="#weavers-page" class="btn btn-outline artisan-btn">Know More</a>
-            </div>
-        </section>
-
-        <!-- ===== PRODUCT GALLERY SECTION ===== -->
-        <section class="gallery">
-            <div class="gallery__header">
-                <h2 class="gallery__heading">Product Gallery</h2>
-                <p class="gallery__subheading">A glimpse into the weaves, textures, and craftsmanship from our looms in
-                    Thiruvilwamala.</p>
-                <a href="#" class="btn btn-outline gallery__explore-btn">Explore More</a>
-            </div>
-            <!-- Images list -->
-            <div class="gallery__track" id="galleryTrack">
-                <div class="gallery__item">
-                    <img src="untitled folder/DSC00782.jpg" alt="Eravathody Weave 1">
-                </div>
-                <div class="gallery__item">
-                    <img src="untitled folder/DSC00786.jpg" alt="Eravathody Weave 2">
-                </div>
-                <div class="gallery__item">
-                    <img src="untitled folder/DSC02269.jpg" alt="Eravathody Weave 3">
-                </div>
-                <div class="gallery__item">
-                    <img src="untitled folder/DSC02353.jpg" alt="Eravathody Weave 4">
-                </div>
-                <div class="gallery__item">
-                    <img src="untitled folder/DSC02393.jpg" alt="Eravathody Weave 5">
-                </div>
-                <div class="gallery__item">
-                    <img src="untitled folder/DSC02912.jpg" alt="Eravathody Weave 6">
-                </div>
-                <div class="gallery__item">
-                    <img src="untitled folder/DSC02944.jpg" alt="Eravathody Weave 7">
-                </div>
-                <div class="gallery__item">
-                    <img src="untitled folder/DSC03002.jpg" alt="Eravathody Weave 8">
-                </div>
-                <div class="gallery__item">
-                    <img src="untitled folder/_MG_9878.jpg" alt="Eravathody Weave 9">
-                </div>
-                <div class="gallery__item">
-                    <img src="untitled folder/_MG_9883.jpg" alt="Eravathody Weave 10">
-                </div>
-                <div class="gallery__item">
-                    <img src="untitled folder/_MG_9919.jpg" alt="Eravathody Weave 11">
-                </div>
-            </div>
-        </section>
-
-        <!-- Main Contact Information Banner -->
-        <section id="contact" class="contact-banner">
-            <div class="contact-banner__content fade-in">
-                <h2 class="contact-banner__heading">Write to Us</h2>
-                <div class="contact-banner__info">
-                    <h4 class="small-uppercase">Visit Us</h4>
-                    <p class="contact-banner__label"><strong>Office Address</strong></p>
-                    <p class="contact-banner__text">Eravathody Handloom Weavers Co-operative Society
-                        Ltd.,<br>Thiruvilwamala,
-                        Thrissur District, Kerala, India</p>
-                    <p class="contact-banner__label"><strong>Office Time</strong></p>
-                    <p class="contact-banner__text">Monday – Saturday 9am – 5pm, Sunday Closed</p>
-                </div>
-                <!--Button-->
-                <button id="openContactModel" class="btn btn-outline"
-                    style="color: #fff; border-color: var(--accent-gold); margin-top: 20px;">Contact Us</button>
-            </div>
-        </section>
-
-        <!-- Newsletter Subscription Area -->
-        <section class="newsletter">
-            <div class="newsletter__content">
-                <h2 class="newsletter__title">Subscribe To Our Newsletter</h2>
-                <p class="newsletter__desc">Stay connected with our weaving community and receive updates on our craft.
+                <h2>More Than a Process</h2>
+                <p class="about__description">
+                    For our weavers, this is not merely a technical procedure. It is Deiva Thozhil — a divine
+                    responsibility passed down through generations. Each step is performed with reverence, and every
+                    fabric that emerges from our looms is a testament to the artisan's dedication.
                 </p>
+                <p class="about__description">
+                    In an age of mechanization, Eravathody continues to honor the slow, deliberate pace of handloom
+                    weaving. We believe that true craftsmanship cannot be rushed, and that the beauty of our fabrics
+                    lies in the human touch woven into every thread.
+                </p>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section section-padding">
+            <div class="container fade-in text-center">
+                <h2 class="newsletter__heading">Subscribe To Our Newsletter</h2>
+                <p class="newsletter__subtext">Stay connected with our weaving community and receive updates on our
+                    craft.</p>
                 <div class="newsletter__form">
                     <input type="email" class="newsletter__input" placeholder="Enter your email here">
                     <button class="newsletter__btn">Subscribe</button>
@@ -322,12 +320,12 @@
             <div class="footer__column">
                 <h4 class="footer__title">Explore</h4>
                 <ul class="footer__links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#craft">The Craft</a></li>
-                    <li><a href="#weavers">Our Weavers</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="../homepage/index.html">Home</a></li>
+                    <li><a href="../about/about.html">About</a></li>
+                    <li><a href="../the craft/craft.html">The Craft</a></li>
+                    <li><a href="../our weavers/weavers.html">Our Weavers</a></li>
+                    <li><a href="../gallery/gallery.html">Gallery</a></li>
+                    <li><a href="../homepage/index.html#contact">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -362,11 +360,7 @@
     </footer>
 
     <!-- Link external JS -->
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Link external JS -->
-    <script src="script.js"></script>
+    <script src="craft.js"></script>
 </body>
 
 </html>

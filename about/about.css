@@ -1,7 +1,7 @@
 /* 1. CORE VARIABLES & FONTS */
 @font-face {
     font-family: 'MenckenStdHead';
-    src: url('font1.otf') format('opentype');
+    src: url('../homepage/font1.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
@@ -216,7 +216,7 @@ p {
     padding-top: 80px;
     /* Account for navbar slightly */
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('hero.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('../homepage/hero.jpg') no-repeat center center/cover;
 }
 
 .hero__text {
@@ -294,7 +294,6 @@ p {
     border-right: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
     transform: rotate(45deg);
-    animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
@@ -421,7 +420,7 @@ p {
     min-height: 480px;
     height: auto;
     position: relative;
-    background: url('banner1.jpg') no-repeat center center / cover;
+    background: url('../homepage/banner1.jpg') no-repeat center center / cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -647,7 +646,7 @@ p {
     height: 400px;
     scroll-snap-align: center;
     overflow: hidden;
-    filter: grayscale(100%);
+    filter: saturate(130%);
     opacity: 0.45;
     transform: scale(0.88);
     transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
@@ -663,7 +662,7 @@ p {
 
 /* Hovered item — pops into full colour and full size */
 .gallery__item:hover {
-    filter: grayscale(0%);
+    filter: saturate(130%);
     opacity: 1;
     transform: scale(1);
 }
@@ -778,7 +777,7 @@ p {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('write.jpg') no-repeat center center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../homepage/write.jpg') no-repeat center center / cover;
     padding: 80px 10%;
     /* 10% pads it nicely away from the left border */
     color: #ffffff;
@@ -1160,4 +1159,405 @@ p {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* =========================================
+   13. ABOUT PAGE SPECIFIC STYLES
+   ========================================= */
+.about-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../homepage/hero.jpg') no-repeat center center/cover;
+}
+
+.about-hero__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    color: #C2A24D;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.about-history {
+    position: relative;
+}
+
+.mission-section {
+    background-color: #F4F1EA;
+}
+
+.mission-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.mission-card {
+    background: #fff;
+    padding: 40px 35px;
+    border-left: 3px solid #C2A24D;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.mission-card__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: #4A372E;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.mission-card__text {
+    font-size: 16px;
+    color: #5C5C5C;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.legacy-section {
+    position: relative;
+}
+
+.legacy-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.legacy-text {
+    text-align: left;
+}
+
+.legacy-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.legacy-photo {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border: 8px solid #fff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   14. CRAFT PAGE SPECIFIC STYLES
+   ========================================= */
+.craft-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../homepage/hero.jpg') no-repeat center center/cover;
+}
+
+.craft-hero__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    color: #C2A24D;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.craft-intro {
+    background-color: #E6DED2;
+}
+
+.craft-intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.process-section {
+    background-color: #F4F1EA;
+}
+
+.process-step {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 50px;
+    margin-bottom: 70px;
+    align-items: start;
+}
+
+.process-step__number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    color: #C2A24D;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.process-step__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: #4A372E;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.process-step__text {
+    font-size: 17px;
+    color: #5C5C5C;
+    line-height: 1.8;
+    max-width: 100%;
+    margin: 0;
+}
+
+.philosophy-section {
+    position: relative;
+}
+
+/* =========================================
+   15. WEAVERS PAGE SPECIFIC STYLES
+   ========================================= */
+.weavers-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../homepage/hero.jpg') no-repeat center center/cover;
+}
+
+.weavers-hero__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    color: #C2A24D;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.weavers-intro {
+    background-color: #E6DED2;
+}
+
+.weavers-intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.featured-weavers {
+    background-color: #F4F1EA;
+}
+
+.weaver-profile {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 70px;
+    margin-bottom: 100px;
+    align-items: center;
+}
+
+.weaver-profile--reverse {
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.weaver-profile--reverse .weaver-profile__image {
+    order: 2;
+}
+
+.weaver-profile--reverse .weaver-profile__content {
+    order: 1;
+    text-align: right;
+}
+
+.weaver-polaroid {
+    background: #fff;
+    padding: 15px 15px 50px 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.weaver-polaroid:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.weaver-polaroid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+.weaver-polaroid__caption {
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: -30px;
+}
+
+.weaver-profile__name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    color: #4A372E;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.weaver-profile__role {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #C2A24D;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.weaver-profile__text {
+    font-size: 17px;
+    color: #5C5C5C;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.community-section {
+    position: relative;
+}
+
+/* =========================================
+   16. GALLERY PAGE SPECIFIC STYLES
+   ========================================= */
+.gallery-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../homepage/hero.jpg') no-repeat center center/cover;
+}
+
+.gallery-hero__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    color: #C2A24D;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.gallery-intro {
+    background-color: #E6DED2;
+}
+
+.gallery-intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.full-gallery {
+    background-color: #F4F1EA;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.gallery-grid__item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid__item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-grid__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-grid__item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-grid__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 30px 20px 20px 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-grid__item:hover .gallery-grid__overlay {
+    opacity: 1;
+}
+
+.gallery-grid__caption {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.gallery-categories {
+    position: relative;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.category-card {
+    background: #fff;
+    padding: 40px 35px;
+    border-left: 3px solid #C2A24D;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.category-card__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: #4A372E;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.category-card__text {
+    font-size: 16px;
+    color: #5C5C5C;
+    line-height: 1.7;
+    margin: 0;
 }
