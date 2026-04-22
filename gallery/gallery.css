@@ -101,6 +101,15 @@ p {
     font-weight: 600;
     color: #1C1C1C;
     letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 /* Navigation Menu Links container */
@@ -1115,7 +1124,7 @@ p {
 /* Bottom bar */
 .footer__bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 20px 80px;
     position: relative;
@@ -1128,6 +1137,7 @@ p {
     color: rgba(255, 255, 255, 0.45);
     margin: 0;
     max-width: 100%;
+    text-align: center;
 }
 
 .footer__bottom-links {
@@ -1560,4 +1570,66 @@ p {
     color: #5C5C5C;
     line-height: 1.7;
     margin: 0;
+}
+
+/* =========================================
+   17. LIGHTBOX STYLES
+   ========================================= */
+#lightboxModel {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.lightbox__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 80vh;
+    gap: 20px;
+}
+
+.lightbox__image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    height: 100%;
+}
+
+.lightbox__image {
+    max-width: 100%;
+    max-height: calc(100% - 40px);
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: 2px solid #C2A24D;
+}
+
+.lightbox__caption {
+    font-family: 'Syne', sans-serif;
+    color: #fff;
+    margin-top: 15px;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.lightbox__nav-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 20px;
+}
+
+.lightbox__nav-btn:hover {
+    color: #C2A24D;
+}
+
+#closeLightboxModel {
+    top: 20px;
+    right: 30px;
+    font-size: 50px;
 }

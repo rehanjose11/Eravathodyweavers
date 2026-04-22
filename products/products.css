@@ -1,0 +1,166 @@
+/* Products Page Specific Styles */
+
+/* Hero Section */
+.products-hero {
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../homepage/imagesHP/IMG_8708.jpg') no-repeat center center / cover;
+    margin-top: 80px; /* Offset for header */
+}
+
+.products-hero__title {
+    font-family: 'MenckenStdHead', serif;
+    font-size: 80px;
+    color: #C2A24D;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero__subtitle {
+    font-family: 'Syne', sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.hero__description {
+    font-family: 'Syne', sans-serif;
+    font-size: 19.2px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Simple Box Grid Layout */
+.products-container {
+    padding: 100px 0;
+    background-color: #F4F1EA;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.product-card__image-container {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 4px solid #C2A24D;
+}
+
+.product-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-card__image {
+    transform: scale(1.05);
+}
+
+.product-card__content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-card__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: #4A372E;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.product-card__desc {
+    font-size: 15px;
+    color: #5C5C5C;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.product-card__specs {
+    margin-bottom: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: auto;
+}
+
+.product-spec-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.product-spec-item span {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    color: #C2A24D;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.product-spec-item strong {
+    font-size: 13px;
+    color: #1C1C1C;
+    font-weight: 500;
+}
+
+.btn-dark {
+    background-color: #4A372E;
+    color: #fff;
+    padding: 14px 0;
+    border: none;
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.btn-dark:hover {
+    background-color: #C2A24D;
+}
+
+@media (max-width: 1100px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}

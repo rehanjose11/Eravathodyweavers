@@ -23,7 +23,10 @@
     <header class="header">
         <!-- Navigation Bar click logo to home page -->
         <div class="logo">
-            <a href="../homepage/index.html">Eravathody Weavers</a>
+            <a href="../homepage/index.html">
+                <img src="../homepage/imagesHP/Asset 1.png" alt="Eravathody Logo" class="nav-logo-img">
+                <span>Eravathody Handloom</span>
+            </a>
         </div>
         <!-- Navigation Bar links -->
         <nav class="nav-menu">
@@ -32,8 +35,9 @@
                 <li><a href="../about/about.html" class="active">About</a></li>
                 <li><a href="../the craft/craft.html">The Craft</a></li>
                 <li><a href="../our weavers/weavers.html">Our Weavers</a></li>
+                <li><a href="../products/products.html">Products</a></li>
                 <li><a href="../gallery/gallery.html">Gallery</a></li>
-                <li><a href="../homepage/index.html#contact">Contact Us</a></li>
+                <li><a href="../contact/contact.html">Contact Us</a></li>
             </ul>
         </nav>
         <div class="header__search">
@@ -61,68 +65,110 @@
             </div>
         </section>
 
-        <!-- History Section -->
-        <section class="about-history section-padding bg-light">
+        <!-- Introduction Section -->
+        <section class="about-intro section-padding bg-light">
             <div class="about__decorative">
                 <img src="../homepage/imagesHP/gold.png" alt="Decorative element">
             </div>
             <div class="container fade-in">
                 <div class="about__grid">
-                    <div class="about__text-column">
-                        <h2>The Beginning</h2>
+                    <div class="about__text-column about__text-column--left">
+                        <h2>The Arrival of Mudaliyar</h2>
                         <p class="about__description">
-                            In 1941, amid the independence movement and a revival of indigenous crafts, a group of
-                            dedicated artisans in Thiruvilwamala came together to form the Eravathody Handloom Weavers'
-                            Co-operative Society.
+                            A few centuries ago, during a time of flourishing art and craftsmanship, the Raja of Kochi sought to elevate his court's prestige by commissioning garments of unmatched quality. To achieve this, he invited skilled weaving families from Tamil Nadu — renowned for their mastery in fine handloom techniques — to settle in his kingdom and create textiles exclusively for the royal family.
                         </p>
                         <p class="about__description">
-                            The society was born from a desire to preserve the traditional weaving practices passed down
-                            through generations of the Mudaliar community — a community for whom weaving was not merely
-                            an occupation, but Deiva Thozhil, a sacred calling.
+                            These artisans were warmly welcomed and granted land near the Eravath Mana. Over time, many of these families chose to remain in Kerala rather than return to Tamil Nadu, and the area came to be known as Eravathody. Thus emerged a unique weaving village in Kerala — where Tamil handloom traditions blended with the local ethos, creating a legacy of craftsmanship that continues to thrive.
                         </p>
                     </div>
                     <div class="about__image-column">
-                        <div class="about__polaroid">
-                            <img src="../homepage/imagesHP/pic2.JPG" alt="Eravathody Historical">
-                            <p class="about__polaroid-caption">Thiruvilwamala, 1941</p>
+                        <img src="thirumala.webp" alt="Aerial view of Thiruwilvamala" class="about__plain-img">
+                        <p class="about__photo-caption">Aerial view of Thiruwilvamala</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section (Horizontal Sticky Scroll) -->
+        <section class="timeline-wrapper" id="timelineWrapper">
+            <div class="timeline-sticky">
+                <div class="container">
+                    <h2 class="timeline-title text-center">Our Journey Through Time</h2>
+                    <div class="timeline-container">
+                        <div class="timeline-track" id="timelineTrack">
+                            
+                            <!-- Item 1 -->
+                            <div class="timeline-item active" data-index="0">
+                                <div class="timeline-year">1941</div>
+                                <h3 class="timeline-event">Society Formed</h3>
+                                <p class="timeline-desc">The Eravathody Handloom Weavers' Co-operative Society was established on 5th July 1941, bringing together 500 skilled artisans from the Mudaliar community.</p>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="timeline-item" data-index="1">
+                                <div class="timeline-year">1980</div>
+                                <h3 class="timeline-event">Relocation</h3>
+                                <p class="timeline-desc">The Eravathody Society relocated to its current structured facility, providing dedicated spaces for pit looms, frame looms, and storage.</p>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="timeline-item" data-index="2">
+                                <div class="timeline-year">2002</div>
+                                <h3 class="timeline-event">State Recognition</h3>
+                                <p class="timeline-desc">Inclusion in the Kerala Government's Handloom School Uniform Scheme and honored with the 'Kalaparam Aaya Kaithari' award for a Theyyam-inspired Kasavu design.</p>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="timeline-item" data-index="3">
+                                <div class="timeline-year">2010</div>
+                                <h3 class="timeline-event">No.1 Society</h3>
+                                <p class="timeline-desc">Recognized as Kerala's No.1 Handloom Society and awarded by the Directorate of Handloom &amp; Textiles for outstanding contribution to the craft.</p>
+                            </div>
+
+                            <!-- Item 5 — from CRD Book -->
+                            <div class="timeline-item" data-index="4">
+                                <div class="timeline-year">2015</div>
+                                <h3 class="timeline-event">Product Diversification</h3>
+                                <p class="timeline-desc">Expanded the product range beyond the traditional Kasavu saree to include dhotis, towels, and export-quality yardage, responding to evolving market demands while preserving authentic weave structures.</p>
+                            </div>
+
+                            <!-- Item 6 -->
+                            <div class="timeline-item" data-index="5">
+                                <div class="timeline-year">2025</div>
+                                <h3 class="timeline-event">Present Day</h3>
+                                <p class="timeline-desc">Continuing the legacy with 46 dedicated members, preserving Deiva Thozhil — the sacred duty of weaving.</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Mission Section -->
-        <section class="mission-section section-padding">
-            <div class="container fade-in">
-                <div class="mission-content">
-                    <h2 class="text-center">Our Mission & Values</h2>
-                    <div class="mission-grid">
-                        <div class="mission-card">
-                            <h3 class="mission-card__title">Preservation</h3>
-                            <p class="mission-card__text">
-                                We protect and sustain the authentic handloom weaving techniques that have been refined
-                                over centuries, ensuring they are not lost to industrialization.
+        <!-- Vision & Mission Section -->
+        <section class="vision-mission">
+            <!-- Full-width banner image -->  
+            <div class="vm-banner" style="background-image: url('mission.jpeg')">
+                <div class="vm-banner__overlay"></div>
+                <div class="vm-banner__text">
+                    <p class="vm-eyebrow" style="color: #C2A24D;">Our Purpose</p>
+                    <h2 style="color: #fff; margin-bottom: 0;">Vision &amp; Mission</h2>
+                </div>
+            </div>
+            <!-- Cards below the banner -->
+            <div class="vm-cards-row bg-light section-padding" style="padding-top: 80px; padding-bottom: 100px;">
+                <div class="container fade-in">
+                    <div class="vm-grid">
+                        <div class="vm-card">
+                            <h2 class="vm-title">Our Vision</h2>
+                            <p class="vm-text">
+                                To be the enduring heartbeat of Kerala's handloom legacy, where the sacred duty of weaving — Deiva Thozhil — is celebrated and carried forward by future generations, ensuring the art of the loom never fades.
                             </p>
                         </div>
-                        <div class="mission-card">
-                            <h3 class="mission-card__title">Community</h3>
-                            <p class="mission-card__text">
-                                Our co-operative model ensures fair wages, collective decision-making, and shared
-                                prosperity among all our weavers and their families.
-                            </p>
-                        </div>
-                        <div class="mission-card">
-                            <h3 class="mission-card__title">Craftsmanship</h3>
-                            <p class="mission-card__text">
-                                Every fabric that leaves our looms carries the mark of skilled hands and patient
-                                dedication — a testament to quality over mass production.
-                            </p>
-                        </div>
-                        <div class="mission-card">
-                            <h3 class="mission-card__title">Heritage</h3>
-                            <p class="mission-card__text">
-                                We honor Deiva Thozhil, the belief that weaving is a divine responsibility, connecting
-                                us to our ancestors and to the cultural fabric of Kerala.
+                        <div class="vm-card">
+                            <h2 class="vm-title">Our Mission</h2>
+                            <p class="vm-text">
+                                To preserve authentic handloom craftsmanship through collective effort, uphold the cultural integrity of the Kasavu tradition, and support our community of artisans with sustainable livelihoods and profound respect.
                             </p>
                         </div>
                     </div>
@@ -130,45 +176,74 @@
             </div>
         </section>
 
-        <!-- Legacy Section -->
-        <section class="legacy-section section-padding bg-light">
-            <div class="container fade-in">
-                <div class="legacy-grid">
-                    <div class="legacy-text">
-                        <h2>A Living Legacy</h2>
-                        <p class="about__description">
-                            Over eight decades, Eravathody has weathered economic shifts, technological changes, and
-                            evolving market demands. Yet, we remain steadfast in our commitment to handloom weaving.
-                        </p>
-                        <p class="about__description">
-                            Today, the society supports over 50 active weavers and their families, maintaining a balance
-                            between tradition and sustainability. Our fabrics — from traditional kasavu mundu to modern
-                            sarees — are recognized for their quality and authenticity across Kerala and beyond.
-                        </p>
-                        <p class="about__description">
-                            We continue to train younger generations, passing on not just technical skills but the
-                            philosophy that weaving is an art form deserving of respect, patience, and devotion.
-                        </p>
-                    </div>
-                    <div class="legacy-image">
-                        <img src="../homepage/imagesHP/eravathody gang.png" alt="Eravathody Weavers Today" class="legacy-photo">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Newsletter Section -->
-        <section class="newsletter-section section-padding">
+        <!-- Documentary Video Section -->
+        <section class="video-section section-padding">
             <div class="container fade-in text-center">
-                <h2 class="newsletter__heading">Subscribe To Our Newsletter</h2>
-                <p class="newsletter__subtext">Stay connected with our weaving community and receive updates on our
-                    craft.</p>
-                <div class="newsletter__form">
-                    <input type="email" class="newsletter__input" placeholder="Enter your email here">
-                    <button class="newsletter__btn">Subscribe</button>
+                <p class="vm-eyebrow">A Story Worth Watching</p>
+                <h2>Step Inside the Loom</h2>
+                <p class="about__description" style="text-align:center; max-width: 580px; margin: 0 auto 40px;">Pull up a chair. Watch the threads come alive. This short documentary takes you inside the rhythms, the hands, and the heart of Eravathody.</p>
+                <div class="video-wrapper video-wrapper--large">
+                    <div class="yt-facade" id="ytFacade" data-videoid="_fuKSRgBEiY">
+                        <img 
+                            src="https://img.youtube.com/vi/_fuKSRgBEiY/maxresdefault.jpg" 
+                            alt="Eravathody Handloom Documentary" 
+                            class="yt-facade__thumb"
+                            onerror="this.src='https://img.youtube.com/vi/_fuKSRgBEiY/hqdefault.jpg'"
+                        >
+                        <button class="yt-facade__play" aria-label="Play documentary">
+                            <svg viewBox="0 0 68 48" width="68" height="48">
+                                <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/>
+                                <path d="M45 24 27 14v20" fill="#fff"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <script>
+                    document.getElementById('ytFacade').addEventListener('click', function() {
+                        var id = this.dataset.videoid;
+                        var iframe = document.createElement('iframe');
+                        iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+                        iframe.width = '100%';
+                        iframe.height = '100%';
+                        iframe.frameBorder = '0';
+                        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                        iframe.allowFullscreen = true;
+                        iframe.title = 'Eravathody Handloom Documentary';
+                        this.parentNode.replaceChild(iframe, this);
+                    });
+                </script>
+            </div>
+        </section>
+
+        <!-- Flipbook Section -->
+        <section class="flipbook-section section-padding bg-light">
+            <div class="container fade-in">
+                <div class="flipbook-header">
+                    <p class="vm-eyebrow">A Living Archive</p>
+                    <h2>Research Documented by<br>National Institute of Fashion Technology, Kannur Students</h2>
+                    <p class="about__description flipbook-intro-text">Turn the pages of our craft — a meticulous field study that captured every thread, every loom, every weaver's story. Explore the book below.</p>
+                </div>
+            </div>
+
+            <!-- Full-width book viewer -->
+            <div class="book-viewer-wrap">
+                <div class="book-stage" id="bookStage">
+                    <!-- StPageFlip renders here -->
+                </div>
+                <div class="book-controls">
+                    <button id="bookPrev" class="flipbook-nav-btn" aria-label="Previous page">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    </button>
+                    <span id="bookPageNum" class="flipbook-page-num">— / —</span>
+                    <button id="bookNext" class="flipbook-nav-btn" aria-label="Next page">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </button>
                 </div>
             </div>
         </section>
+
+        <!-- Flipbook Modal (keep for compatibility) -->
+        <div id="flipbookModal" class="model"></div>
 
         <!-- Contact Us when button is clicked -->
         <div id="contactModel" class="model">
@@ -258,7 +333,7 @@
 
                         <!-- Form Submission Action -->
                         <div class="form__row">
-                            <button type="submit" class="form__submit-btn">Submit</button>
+                            <button type="submit" class="form__submit-btn">Submit &rarr;</button>
                         </div>
 
                     </form>
@@ -286,8 +361,9 @@
                     <li><a href="../about/about.html">About</a></li>
                     <li><a href="../the craft/craft.html">The Craft</a></li>
                     <li><a href="../our weavers/weavers.html">Our Weavers</a></li>
+                    <li><a href="../products/products.html">Products</a></li>
                     <li><a href="../gallery/gallery.html">Gallery</a></li>
-                    <li><a href="../homepage/index.html#contact">Contact Us</a></li>
+                    <li><a href="../contact/contact.html">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -297,13 +373,13 @@
                 <p class="footer__text">Thiruvilwamala<br>Thrissur, Kerala, India</p>
 
                 <h4 class="footer__title" style="margin-top: 24px;">Call Us</h4>
-                <p class="footer__text">+91 XXXXX XXXXX</p>
+                <p class="footer__text">04884 282 038</p>
             </div>
 
             <!-- Follow / Email Column -->
             <div class="footer__column">
                 <h4 class="footer__title">Follow Us</h4>
-                <p class="footer__text">Instagram &nbsp;|&nbsp; Facebook</p>
+                <p class="footer__text"><a href="https://www.instagram.com/eravathody_handloom_clothes/" target="_blank" style="color: inherit; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#C2A24D'" onmouseout="this.style.color='inherit'">Instagram</a> &nbsp;|&nbsp; <a href="https://www.facebook.com/p/ERAVATHODY-HANDLOOM-WEAVERS-CO-OPERATIVE-SOCIETY-100067706336729/" target="_blank" style="color: inherit; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#C2A24D'" onmouseout="this.style.color='inherit'">Facebook</a></p>
 
                 <h4 class="footer__title" style="margin-top: 24px;">Email</h4>
                 <p class="footer__text">eravathody@gmail.com</p>
@@ -312,17 +388,82 @@
 
         <!-- Bottom Bar -->
         <div class="footer__bottom">
-            <p class="footer__copy">&copy; 2026 Eravathody Handloom Weavers' Co-operative Society. All Rights Reserved.
-            </p>
-            <div class="footer__bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms &amp; Conditions</a>
-            </div>
+            <p class="footer__copy">&copy; 2026 Eravathody Handloom Weavers' Co-operative Society. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Link external JS -->
+    <!-- StPageFlip library for real book spread with page-turn animation -->
+    <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
     <script src="about.js"></script>
+    <script>
+        // ---- Real Book Flipbook (StPageFlip) ----
+        (function() {
+            const stage = document.getElementById('bookStage');
+            const pageNumEl = document.getElementById('bookPageNum');
+            const prevBtn = document.getElementById('bookPrev');
+            const nextBtn = document.getElementById('bookNext');
+            if (!stage) return;
+
+            const pages = [];
+            const totalPages = 80;
+            for (let i = 1; i <= totalPages; i++) {
+                const num = String(i).padStart(4, '0');
+                pages.push('BOOKJPG/CRD_book_Eravathody-compressed_page-' + num + '.jpg');
+            }
+
+            // Load first image to get original aspect ratio
+            const img = new Image();
+            img.src = pages[0];
+            img.onload = function() {
+                const naturalRatio = img.naturalHeight / img.naturalWidth;
+
+                // Calculate book dimensions to fit nicely
+                const maxW = Math.min(window.innerWidth * 0.9, 1200);
+                const pageW = Math.floor(maxW / 2);
+                const pageH = Math.floor(pageW * naturalRatio);
+
+                stage.style.width  = (pageW * 2) + 'px';
+                stage.style.height = pageH + 'px';
+
+                const pageFlip = new St.PageFlip(stage, {
+                    width:       pageW,
+                    height:      pageH,
+                    size:        'fixed',
+                    showCover:   true,
+                    drawShadow:  true,
+                    flippingTime: 700,
+                    usePortrait:  false,
+                    startZIndex:  10,
+                    swipeDistance: 30,
+                    clickEventForward: true,
+                    useMouseEvents: true,
+                });
+
+                pageFlip.loadFromImages(pages);
+
+                const openingMask = document.createElement('div');
+                openingMask.className = 'book-opening-mask';
+                stage.appendChild(openingMask);
+
+                function syncOpeningMask(pageIndex) {
+                    openingMask.classList.toggle('is-hidden', pageIndex > 0);
+                }
+
+                syncOpeningMask(pageFlip.getCurrentPageIndex ? pageFlip.getCurrentPageIndex() : 0);
+
+                pageFlip.on('flip', function(e) {
+                    const cur = e.data + 1;
+                    pageNumEl.textContent = cur + ' / ' + pageFlip.getPageCount();
+                    syncOpeningMask(e.data);
+                });
+
+                if (prevBtn) prevBtn.addEventListener('click', function() { pageFlip.flipPrev(); });
+                if (nextBtn) nextBtn.addEventListener('click', function() { pageFlip.flipNext(); });
+
+                pageNumEl.textContent = '1 / ' + pageFlip.getPageCount();
+            };
+        })();
+    </script>
 </body>
 
 </html>

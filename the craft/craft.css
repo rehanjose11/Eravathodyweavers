@@ -101,6 +101,15 @@ p {
     font-weight: 600;
     color: #1C1C1C;
     letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 /* Navigation Menu Links container */
@@ -1115,7 +1124,7 @@ p {
 /* Bottom bar */
 .footer__bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 20px 80px;
     position: relative;
@@ -1128,6 +1137,7 @@ p {
     color: rgba(255, 255, 255, 0.45);
     margin: 0;
     max-width: 100%;
+    text-align: center;
 }
 
 .footer__bottom-links {
@@ -1284,16 +1294,80 @@ p {
     margin: 0 auto;
 }
 
-.process-section {
+.process-scroll-container {
     background-color: #F4F1EA;
+    position: relative;
 }
 
-.process-step {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 50px;
-    margin-bottom: 70px;
-    align-items: start;
+.process-scroll-wrapper {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+}
+
+.process-sticky-side {
+    position: sticky;
+    top: 150px;
+    width: 40%;
+    padding-right: 60px;
+    height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.process-sticky-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: #4A372E;
+    margin-bottom: 20px;
+}
+
+.process-progress {
+    width: 4px;
+    height: 200px;
+    background: #e0d9cc;
+    margin-top: 40px;
+    position: relative;
+    border-radius: 2px;
+}
+
+.process-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #C2A24D;
+    border-radius: 2px;
+    transition: height 0.1s ease-out;
+}
+
+.process-steps-side {
+    width: 60%;
+    padding: 100px 0 200px 0;
+}
+
+.process-scroll-step {
+    padding: 60px 50px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 80vh; /* Space them out for scrolling */
+    opacity: 0.3;
+    transform: scale(0.95);
+    transition: all 0.5s ease;
+    border-left: 4px solid transparent;
+}
+
+.process-scroll-step:last-child {
+    margin-bottom: 0;
+}
+
+.process-scroll-step.active {
+    opacity: 1;
+    transform: scale(1);
+    border-left-color: #C2A24D;
 }
 
 .process-step__number {
@@ -1302,6 +1376,7 @@ p {
     color: #C2A24D;
     font-weight: 600;
     line-height: 1;
+    margin-bottom: 15px;
 }
 
 .process-step__title {

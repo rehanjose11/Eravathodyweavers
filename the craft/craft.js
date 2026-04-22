@@ -186,6 +186,56 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
     });
 
     // Initial highlight
-    highlightCenter();
+    if (typeof highlightCenter === 'function') {
+        highlightCenter();
+    }
 }());
 
+// PROCESS STICKY SCROLL LOGIC
+(function() {
+    const steps = document.querySelectorAll('.process-scroll-step');
+    const progressBar = document.getElementById('processProgressBar');
+    
+    if (steps.length === 0 || !progressBar) return;
+
+    let targetProgress = 0;
+    let currentProgress = 0;
+
+    window.addEventListener('scroll', () => {
+        let activeIndex = 0;
+        let minDistance = Infinity;
+        const viewportCenter = window.innerHeight / 2;
+
+        steps.forEach((step, index) => {
+            const rect = step.getBoundingClientRect();
+            // Distance from the center of the step to the center of the viewport
+            const stepCenter = rect.top + rect.height / 2;
+            const distance = Math.abs(viewportCenter - stepCenter);
+            
+            if (distance < minDistance) {
+                minDistance = distance;
+                activeIndex = index;
+            }
+        });
+
+        // Highlight the closest step
+        steps.forEach((step, index) => {
+            if (index === activeIndex) {
+                step.classList.add('active');
+            } else {
+                step.classList.remove('active');
+            }
+        });
+
+        // Update target progress
+        targetProgress = (activeIndex / (steps.length - 1)) * 100;
+    });
+
+    // Lerp loop for smooth progress bar transition
+    function smoothProgress() {
+        currentProgress += (targetProgress - currentProgress) * 0.08;
+        progressBar.style.height = `${currentProgress}%`;
+        requestAnimationFrame(smoothProgress);
+    }
+    smoothProgress();
+})();

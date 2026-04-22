@@ -26,7 +26,10 @@
     <header class="header">
         <!-- Navigation Bar click logo to home page -->
         <div class="logo">
-            <a href="#home">Eravathody Weavers</a>
+            <a href="#home">
+                <img src="imagesHP/Asset 1.png" alt="Eravathody Logo" class="nav-logo-img">
+                <span>Eravathody Handloom</span>
+            </a>
         </div>
         <!-- Navigation Bar links -->
         <nav class="nav-menu">
@@ -35,8 +38,9 @@
                 <li><a href="../about/about.html">About</a></li>
                 <li><a href="../the craft/craft.html">The Craft</a></li>
                 <li><a href="../our weavers/weavers.html">Our Weavers</a></li>
+                <li><a href="../products/products.html">Products</a></li>
                 <li><a href="../gallery/gallery.html">Gallery</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="../contact/contact.html">Contact Us</a></li>
             </ul>
         </nav>
         <div class="header__search">
@@ -96,7 +100,7 @@
                         continues to preserve authentic handloom craftsmanship through collective effort and cultural
                         integrity.
                     </p>
-                    <a href="../about/about.html" class="btn btn-outline">Know More</a>
+                    <a href="../about/about.html" class="btn btn-outline">Know More &rarr;</a>
                 </div>
             </div>
         </section>
@@ -128,21 +132,28 @@
                 <div class="artisan-photo-wrapper">
                     <img src="imagesHP/eravathody gang.png" alt="Eravathody Weavers Group" class="artisan-photo">
                 </div>
-                <a href="../our weavers/weavers.html" class="btn btn-outline artisan-btn">Know More</a>
+                <a href="../our weavers/weavers.html" class="btn btn-outline artisan-btn">Know More &rarr;</a>
             </div>
         </section>
 
-        <!-- ===== PRODUCT GALLERY SECTION ===== -->
+        <!-- ===== PRODUCT EXPLORATION SECTION ===== -->
         <section class="gallery">
             <div class="gallery__header">
-                <h2 class="gallery__heading">Product Gallery</h2>
-                <p class="gallery__subheading">A glimpse into the weaves, textures, and craftsmanship from our looms in
+                <h2 class="gallery__heading">Our Products</h2>
+                <p class="gallery__subheading">A glimpse into the fine weaves and pure kasavu crafted on our looms in
                     Thiruvilwamala.</p>
-                <a href="../gallery/gallery.html" class="btn btn-outline gallery__explore-btn">Explore More</a>
+                <a href="../products/products.html" class="btn btn-outline gallery__explore-btn">Explore Products &rarr;</a>
             </div>
             <!-- Images list -->
-            <div class="gallery__track" id="galleryTrack">
-                <div class="gallery__item">
+            <div class="gallery__track-container">
+                <button class="gallery__nav-btn gallery__prev-btn" id="galleryPrevBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                </button>
+                <button class="gallery__nav-btn gallery__next-btn" id="galleryNextBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+                <div class="gallery__track" id="galleryTrack">
+                    <div class="gallery__item">
                     <img src="gallery section/DSC00782.jpg" alt="Eravathody Weave 1">
                 </div>
                 <div class="gallery__item">
@@ -176,6 +187,16 @@
                     <img src="gallery section/_MG_9919.jpg" alt="Eravathody Weave 11">
                 </div>
             </div>
+            </div>
+        </section>
+
+        <!-- ===== GALLERY EXPLORATION BANNER ===== -->
+        <section class="gallery-banner">
+            <div class="gallery-banner__content fade-in text-center">
+                <h2 class="gallery-banner__title">A Visual Journey</h2>
+                <p class="gallery-banner__desc">Discover the detailed textures and moments captured at our weaving society.</p>
+                <a href="../gallery/gallery.html" class="btn" style="color: #F4F1EA; border-color: transparent;">Explore Gallery &rarr;</a>
+            </div>
         </section>
 
         <!-- Main Contact Information Banner -->
@@ -190,9 +211,8 @@
                     <p class="contact-banner__label"><strong>Office Time</strong></p>
                     <p class="contact-banner__text">Monday – Saturday 9am – 5pm, Sunday Closed</p>
                 </div>
-                <!--Button-->
-                <button id="openContactModel" class="btn btn-outline"
-                    style="color: #fff; border-color: var(--accent-gold); margin-top: 20px;">Contact Us</button>
+                <a href="../contact/contact.html" class="btn btn-outline"
+                    style="color: #fff; border-color: var(--accent-gold); margin-top: 20px; display: inline-block; text-decoration: none;">Contact Us &rarr;</a>
             </div>
         </section>
 
@@ -204,7 +224,7 @@
                 </p>
                 <div class="newsletter__form">
                     <input type="email" class="newsletter__input" placeholder="Enter your email here">
-                    <button class="newsletter__btn">Subscribe</button>
+                    <button class="newsletter__btn">Subscribe &rarr;</button>
                 </div>
             </div>
         </section>
@@ -297,7 +317,7 @@
 
                         <!-- Form Submission Action -->
                         <div class="form__row">
-                            <button type="submit" class="form__submit-btn">Submit</button>
+                            <button type="submit" class="form__submit-btn">Submit &rarr;</button>
                         </div>
 
                     </form>
@@ -325,8 +345,9 @@
                     <li><a href="../about/about.html">About</a></li>
                     <li><a href="../the craft/craft.html">The Craft</a></li>
                     <li><a href="../our weavers/weavers.html">Our Weavers</a></li>
+                    <li><a href="../products/products.html">Products</a></li>
                     <li><a href="../gallery/gallery.html">Gallery</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="../contact/contact.html">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -336,13 +357,13 @@
                 <p class="footer__text">Thiruvilwamala<br>Thrissur, Kerala, India</p>
 
                 <h4 class="footer__title" style="margin-top: 24px;">Call Us</h4>
-                <p class="footer__text">+91 XXXXX XXXXX</p>
+                <p class="footer__text">04884 282 038</p>
             </div>
 
             <!-- Follow / Email Column -->
             <div class="footer__column">
                 <h4 class="footer__title">Follow Us</h4>
-                <p class="footer__text">Instagram &nbsp;|&nbsp; Facebook</p>
+                <p class="footer__text"><a href="https://www.instagram.com/eravathody_handloom_clothes/" target="_blank" style="color: inherit; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#C2A24D'" onmouseout="this.style.color='inherit'">Instagram</a> &nbsp;|&nbsp; <a href="https://www.facebook.com/p/ERAVATHODY-HANDLOOM-WEAVERS-CO-OPERATIVE-SOCIETY-100067706336729/" target="_blank" style="color: inherit; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#C2A24D'" onmouseout="this.style.color='inherit'">Facebook</a></p>
 
                 <h4 class="footer__title" style="margin-top: 24px;">Email</h4>
                 <p class="footer__text">eravathody@gmail.com</p>
@@ -351,12 +372,7 @@
 
         <!-- Bottom Bar -->
         <div class="footer__bottom">
-            <p class="footer__copy">&copy; 2026 Eravathody Handloom Weavers' Co-operative Society. All Rights Reserved.
-            </p>
-            <div class="footer__bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms &amp; Conditions</a>
-            </div>
+            <p class="footer__copy">&copy; 2026 Eravathody Handloom Weavers' Co-operative Society. All Rights Reserved.</p>
         </div>
     </footer>
 

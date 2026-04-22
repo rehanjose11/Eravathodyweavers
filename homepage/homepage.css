@@ -101,6 +101,15 @@ p {
     font-weight: 600;
     color: #1C1C1C;
     letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 /* Navigation Menu Links container */
@@ -620,6 +629,43 @@ p {
 }
 
 /* Horizontal scrollable track */
+.gallery__track-container {
+    position: relative;
+    width: 100%;
+}
+
+.gallery__nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #C2A24D;
+    color: #1C1C1C;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.gallery__nav-btn:hover {
+    background: #C2A24D;
+    color: #fff;
+}
+
+.gallery__prev-btn {
+    left: 10px;
+}
+
+.gallery__next-btn {
+    right: 10px;
+}
+
 .gallery__track {
     display: flex;
     align-items: center;
@@ -647,7 +693,7 @@ p {
     scroll-snap-align: center;
     overflow: hidden;
     filter: saturate(130%);
-    opacity: 0.45;
+    opacity: 1;
     transform: scale(0.88);
     transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
 }
@@ -665,6 +711,38 @@ p {
     filter: saturate(130%);
     opacity: 1;
     transform: scale(1);
+}
+
+/* 8.5 GALLERY BANNER (.gallery-banner) */
+.gallery-banner {
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('exploregallery.jpeg') no-repeat center center / cover;
+    padding: 60px 20px;
+    position: relative;
+    text-align: center;
+    border-bottom: 8px solid #C2A24D;
+}
+
+.gallery-banner__content {
+    max-width: 600px;
+    color: #fff;
+}
+
+.gallery-banner__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.gallery-banner__desc {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
 }
 
 /* 9. NEWSLETTER SUBSCRIPTION (.newsletter) */
@@ -1115,7 +1193,7 @@ p {
 /* Bottom bar */
 .footer__bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 20px 80px;
     position: relative;
@@ -1128,6 +1206,7 @@ p {
     color: rgba(255, 255, 255, 0.45);
     margin: 0;
     max-width: 100%;
+    text-align: center;
 }
 
 .footer__bottom-links {

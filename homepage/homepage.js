@@ -185,6 +185,19 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
         track.scrollLeft = scrollStart - (x - startX) * 1.5;
     });
 
+    // Navigation Buttons
+    var prevBtn = document.getElementById('galleryPrevBtn');
+    var nextBtn = document.getElementById('galleryNextBtn');
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', function () {
+            track.scrollBy({ left: -itemWidth * 2, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', function () {
+            track.scrollBy({ left: itemWidth * 2, behavior: 'smooth' });
+        });
+    }
+
     // Initial highlight
     highlightCenter();
 }());

@@ -186,6 +186,85 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
     });
 
     // Initial highlight
-    highlightCenter();
+    if (typeof highlightCenter === 'function') {
+        highlightCenter();
+    }
 }());
 
+// TIMELINE SCROLL LOGIC
+(function() {
+    const wrapper = document.getElementById('timelineWrapper');
+    const track = document.getElementById('timelineTrack');
+    const items = document.querySelectorAll('.timeline-item');
+    
+    if(!wrapper || !track || items.length === 0) return;
+
+    const ITEM_WIDTH = 350 + 50; // card width + margin-right (from CSS)
+
+    let targetTranslate = 0;
+    let currentTranslate = 0;
+
+    window.addEventListener('scroll', () => {
+        const wrapperRect = wrapper.getBoundingClientRect();
+        const scrollDistance = -wrapperRect.top;
+        const scrollableHeight = wrapperRect.height - window.innerHeight;
+        
+        if (scrollDistance >= 0 && scrollDistance <= scrollableHeight) {
+            const scrollFraction = scrollDistance / scrollableHeight;
+            
+            const activeIndex = Math.min(
+                items.length - 1,
+                Math.floor(scrollFraction * items.length)
+            );
+            
+            items.forEach((item, index) => {
+                if(index === activeIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Center the active card: offset so active card is at viewport center
+            const centerOffset = (window.innerWidth / 2) - (ITEM_WIDTH / 2);
+            targetTranslate = (activeIndex * ITEM_WIDTH) - centerOffset;
+            if (targetTranslate < 0) targetTranslate = 0;
+        }
+    });
+
+    // Smooth Lerp Animation Loop
+    function smoothScroll() {
+        currentTranslate += (targetTranslate - currentTranslate) * 0.08;
+        track.style.transform = `translateX(-${currentTranslate}px)`;
+        requestAnimationFrame(smoothScroll);
+    }
+    
+    smoothScroll();
+})();
+
+// FLIPBOOK MODAL LOGIC
+(function() {
+    const openBtn = document.getElementById('openFlipbook');
+    const closeBtn = document.getElementById('closeFlipbookModal');
+    const modal = document.getElementById('flipbookModal');
+
+    if (openBtn && closeBtn && modal) {
+        openBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+})();

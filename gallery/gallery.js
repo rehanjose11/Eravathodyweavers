@@ -186,6 +186,69 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
     });
 
     // Initial highlight
-    highlightCenter();
+    if (typeof highlightCenter === 'function') {
+        highlightCenter();
+    }
 }());
 
+// LIGHTBOX MODAL LOGIC
+(function() {
+    const lightboxModal = document.getElementById('lightboxModel');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeBtn = document.getElementById('closeLightboxModel');
+    const prevBtn = document.getElementById('lightboxPrev');
+    const nextBtn = document.getElementById('lightboxNext');
+    const galleryItems = document.querySelectorAll('.gallery-grid__item');
+    
+    if (!lightboxModal || galleryItems.length === 0) return;
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+        currentIndex = index;
+        const item = galleryItems[currentIndex];
+        const img = item.querySelector('img');
+        const caption = item.querySelector('.gallery-grid__caption');
+        
+        if (img) lightboxImg.src = img.src;
+        if (caption) lightboxCaption.textContent = caption.textContent;
+        
+        lightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => openLightbox(index));
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            lightboxModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            openLightbox(currentIndex);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            openLightbox(currentIndex);
+        });
+    }
+
+    lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal || e.target.classList.contains('lightbox__content') || e.target.classList.contains('lightbox__image-wrapper')) {
+            lightboxModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+})();
