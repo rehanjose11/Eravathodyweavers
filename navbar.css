@@ -1,0 +1,139 @@
+/* Shared navbar styling copied from the homepage so every page matches. */
+.header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 24px 60px;
+    background-color: #F4F1EA;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(28, 28, 28, 0.05);
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    justify-self: auto;
+}
+
+.logo a {
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28.8px;
+    font-weight: 600;
+    color: #1C1C1C;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    justify-self: auto;
+    transform: translateX(50px);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+}
+
+.header__search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    justify-self: auto;
+}
+
+.search-toggle {
+    background: none;
+    border: none;
+    color: #1C1C1C;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    padding: 4px;
+}
+
+.search-toggle:hover {
+    color: #C2A24D;
+}
+
+.header__search-bar {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.header__search-bar.active {
+    width: 200px;
+    opacity: 1;
+}
+
+.header__search-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    border-bottom: 1px solid #C2A24D;
+    background: transparent;
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    color: #1C1C1C;
+    outline: none;
+}
+
+.header__search-input::placeholder {
+    color: #5C5C5C;
+    opacity: 0.6;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-family: 'Syne', sans-serif;
+    color: #1C1C1C;
+    font-size: 15.2px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: #C2A24D;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #C2A24D;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}

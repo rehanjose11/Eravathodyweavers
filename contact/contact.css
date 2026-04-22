@@ -1,63 +1,61 @@
 /* contact.css */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Syne:wght@400;500;600&display=swap');
 
-body, html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Syne', sans-serif;
-    color: #1C1C1C;
-    background-color: #F4F1EA;
-    scroll-behavior: smooth;
-}
-
 /* =========================================
    1. CONTACT HERO
    ========================================= */
 .contact-hero {
-    min-height: 50vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../homepage/write.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                url('../homepage/write.jpg') no-repeat center center / cover;
     text-align: center;
+    padding-top: 80px; /* account for fixed navbar */
 }
 
 .contact-hero__title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 72px;
+    font-size: 76px;
     color: #C2A24D;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
+    line-height: 1.1;
 }
 
 .contact-hero__subtitle {
     font-size: 18px;
-    color: #fff;
-    max-width: 600px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 580px;
     margin: 0 auto;
+    line-height: 1.7;
+    font-family: 'Syne', sans-serif;
 }
 
 /* =========================================
    2. CONTACT LAYOUT
    ========================================= */
 .contact-section {
-    padding: 100px 0;
+    padding: 80px 0 100px;
+    background-color: #F4F1EA;
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 140px;
+    align-items: start;
+    margin-left: -60px;
 }
 
-/* Contact Form */
+/* ---- Contact Form ---- */
 .contact-form-wrapper {
     background: #fff;
     padding: 50px;
     border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-    border-top: 5px solid #C2A24D;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+    border-top: 4px solid #C2A24D;
 }
 
 .contact-form-wrapper h3 {
@@ -65,17 +63,18 @@ body, html {
     font-size: 36px;
     color: #4A372E;
     margin-bottom: 30px;
+    font-weight: 600;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
 
 .contact-form__row {
     display: flex;
-    gap: 20px;
+    gap: 18px;
 }
 
 .contact-form__group {
@@ -88,144 +87,232 @@ body, html {
 .contact-form select,
 .contact-form textarea {
     width: 100%;
-    padding: 15px;
-    border: 1px solid #E6DED2;
-    background: #fdfdfd;
+    padding: 14px 16px;
+    border: 1px solid #E0D8CC;
+    background: #fdfcfa;
     font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    transition: border-color 0.3s ease;
+    font-size: 14px;
+    color: #1C1C1C;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box;
     border-radius: 4px;
+    outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
 }
 
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
     border-color: #C2A24D;
-    outline: none;
+    box-shadow: 0 0 0 3px rgba(194, 162, 77, 0.1);
     background: #fff;
 }
 
+.contact-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235C5C5C' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+}
+
 .contact-form__submit {
-    background-color: #C2A24D;
+    background-color: #4A372E;
     color: #fff;
     border: none;
-    padding: 18px 40px;
-    font-size: 16px;
+    padding: 16px 40px;
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     border-radius: 4px;
     align-self: flex-start;
 }
 
 .contact-form__submit:hover {
-    background-color: #4A372E;
+    background-color: #C2A24D;
+    transform: translateY(-1px);
 }
 
-/* Contact Details */
+/* ---- Contact Details Sidebar ---- */
 .contact-details-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 0;
+    width: 100%;
 }
 
+/* Premium info block with icon */
 .contact-info-block {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 24px 0;
+    border-bottom: 1px solid #E6DED2;
 }
 
-.contact-info-block h4 {
+.contact-info-block:first-child {
+    padding-top: 0;
+}
+
+.contact-info-block:last-of-type {
+    border-bottom: none;
+    padding-bottom: 28px;
+}
+
+.contact-info-icon {
+    width: 44px;
+    height: 44px;
+    background: #F4F1EA;
+    border: 1px solid #E6DED2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-info-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: #C2A24D;
+}
+
+.contact-info-text h4 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
+    font-size: 22px;
     color: #4A372E;
-    margin: 0;
+    margin: 0 0 6px 0;
+    font-weight: 600;
 }
 
-.contact-info-block p {
-    font-size: 16px;
+.contact-info-text p {
+    font-size: 15px;
     color: #5C5C5C;
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
+    max-width: none;
 }
 
+.contact-info-text a {
+    color: #5C5C5C;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info-text a:hover {
+    color: #C2A24D;
+}
+
+/* Map */
 .contact-map {
     width: 100%;
-    height: 350px;
+    max-width: 860px;
+    height: 400px;
+    margin: 24px auto 0;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E6DED2;
 }
 
 .contact-map iframe {
     width: 100%;
     height: 100%;
     border: none;
+    display: block;
 }
 
 /* =========================================
    3. FAQ SECTION
    ========================================= */
 .faq-section {
-    padding: 80px 0;
+    padding: 80px 0 100px;
     background-color: #E6DED2;
 }
 
 .faq-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 56px;
 }
 
 .faq-header h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
+    font-size: 52px;
     color: #1C1C1C;
-    margin: 0;
+    margin: 0 0 12px 0;
+    font-weight: 500;
+}
+
+.faq-eyebrow {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #C2A24D;
+    margin-bottom: 12px;
+    display: block;
 }
 
 .faq-list {
-    max-width: 800px;
+    max-width: 780px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 0;
+    border: 1px solid #d4c8b8;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .faq-item {
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    overflow: hidden;
+    border-bottom: 1px solid #e8e1d7;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
 }
 
 .faq-question {
-    padding: 25px 30px;
+    padding: 24px 30px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #fff;
     transition: background 0.3s ease;
+    user-select: none;
 }
 
 .faq-question:hover {
-    background: #fafafa;
+    background: #faf8f4;
 }
 
 .faq-question h4 {
     font-family: 'Syne', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #4A372E;
     margin: 0;
     font-weight: 600;
+    line-height: 1.4;
+    padding-right: 20px;
 }
 
 .faq-icon {
-    font-size: 24px;
+    font-size: 22px;
     color: #C2A24D;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease;
+    flex-shrink: 0;
+    line-height: 1;
 }
 
 .faq-item.active .faq-icon {
@@ -236,19 +323,80 @@ body, html {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
-    background: #fafafa;
+    background: #fdfcfa;
+}
+
+.faq-item.active .faq-answer {
+    border-top: 1px solid #e8e1d7;
 }
 
 .faq-answer p {
-    padding: 0 30px 25px 30px;
+    padding: 20px 30px 24px 30px;
     margin: 0;
-    font-size: 16px;
+    font-size: 15px;
     color: #5C5C5C;
-    line-height: 1.6;
+    line-height: 1.75;
+    max-width: none;
 }
 
+/* =========================================
+   4. RESPONSIVE
+   ========================================= */
 @media (max-width: 900px) {
     .contact-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-hero__title {
+        font-size: 52px;
+    }
+
+    .contact-form-wrapper {
+        padding: 36px 28px;
+    }
+
+    .contact-form__row {
+        flex-direction: column;
+    }
+
+    .faq-header h2 {
+        font-size: 38px;
     }
 }
+
+/* =========================================
+   5. FIND US IN — FULL-WIDTH MAP
+   ========================================= */
+.find-us-section {
+    width: 100%;
+    line-height: 0; /* removes gap under iframe */
+}
+
+.find-us-header {
+    background-color: #4A372E;
+    padding: 18px 40px;
+    line-height: 1;
+}
+
+.find-us-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.find-us-map {
+    width: 100%;
+    height: 380px;
+}
+
+.find-us-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+

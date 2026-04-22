@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Eravathody Handloom Weavers</title>
+    <title>Contact Us - Eravathody Handloom Weavers</title>
+    <meta name="description" content="Get in touch with Eravathody Handloom Weavers' Co-operative Society. Ask about our craft, place an order, or visit us in Thiruvilwamala, Kerala.">
     <link rel="icon" type="image/x-icon" href="../homepage/imagesHP/Asset 1.ico">
-    <!-- Google Fonts for Editorial Aesthetic -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Syne:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Link external CSS -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="../about/about.css">
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="../navbar.css">
 </head>
 
 <body>
@@ -55,7 +57,7 @@
 
     <main>
         <!-- Contact Hero Section -->
-        <section class="contact-hero section-padding">
+        <section class="contact-hero">
             <div class="container fade-in text-center">
                 <h1 class="contact-hero__title">Get In Touch</h1>
                 <p class="contact-hero__subtitle">Whether you have questions about our craft, wish to place an order, or want to visit the society, we would love to hear from you.</p>
@@ -66,62 +68,173 @@
         <section class="contact-section">
             <div class="container">
                 <div class="contact-grid">
-                    
+
                     <!-- Left: Form -->
                     <div class="contact-form-wrapper fade-in">
-                        <h3>Send us a message</h3>
-                        <form class="contact-form">
-                            <div class="contact-form__row">
-                                <div class="contact-form__group">
-                                    <input type="text" id="contactFirstName" placeholder="First Name" required>
+                        <h3>Write to Us</h3>
+                        <form class="form" id="contactPageForm">
+
+                            <!-- First, Middle, Last Name -->
+                            <div class="form__row form__row--three-col">
+                                <div class="form__group">
+                                    <input type="text" id="cpFirstName" placeholder="First Name" required
+                                        oninput="this.value=this.value.toUpperCase()">
                                 </div>
-                                <div class="contact-form__group">
-                                    <input type="text" id="contactLastName" placeholder="Last Name" required>
+                                <div class="form__group">
+                                    <input type="text" id="cpMiddleName" placeholder="Middle Name"
+                                        oninput="this.value=this.value.toUpperCase()">
+                                </div>
+                                <div class="form__group">
+                                    <input type="text" id="cpLastName" placeholder="Last Name" required
+                                        oninput="this.value=this.value.toUpperCase()">
                                 </div>
                             </div>
-                            <div class="contact-form__group">
-                                <input type="email" id="contactEmail" placeholder="Email Address" required>
+
+                            <!-- Phone (numbers only) + Email -->
+                            <div class="form__row form__row--two-col">
+                                <div class="form__group">
+                                    <input type="tel" id="cpPhone" placeholder="Contact Number" maxlength="10"
+                                        pattern="[0-9]{10}" inputmode="numeric"
+                                        oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)">
+                                </div>
+                                <div class="form__group">
+                                    <input type="email" id="cpEmail" placeholder="Email ID" required>
+                                </div>
                             </div>
-                            <div class="contact-form__group">
-                                <input type="tel" id="contactPhone" placeholder="Phone Number" required>
+
+                            <!-- Gender + District -->
+                            <div class="form__row form__row--two-col">
+                                <div class="form__group">
+                                    <select id="cpGender" class="form__select">
+                                        <option value="" disabled selected>Gender (optional)</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                        <option value="prefer-not">Prefer not to say</option>
+                                    </select>
+                                </div>
+                                <div class="form__group">
+                                    <select id="cpDistrict" class="form__select" required>
+                                        <option value="" disabled selected>District</option>
+                                        <option>Thiruvananthapuram</option>
+                                        <option>Kollam</option>
+                                        <option>Pathanamthitta</option>
+                                        <option>Alappuzha</option>
+                                        <option>Kottayam</option>
+                                        <option>Idukki</option>
+                                        <option>Ernakulam</option>
+                                        <option>Thrissur</option>
+                                        <option>Palakkad</option>
+                                        <option>Malappuram</option>
+                                        <option>Kozhikode</option>
+                                        <option>Wayanad</option>
+                                        <option>Kannur</option>
+                                        <option>Kasaragod</option>
+                                        <option>Outside Kerala</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="contact-form__group">
-                                <select id="contactSubject" required>
-                                    <option value="" disabled selected>Select Subject</option>
-                                    <option value="inquiry">General Inquiry</option>
-                                    <option value="order">Product Order</option>
-                                    <option value="visit">Visit Society</option>
-                                </select>
+
+                            <!-- Date of Birth -->
+                            <div class="form__row">
+                                <div class="form__group form__group--full-width">
+                                    <input type="date" id="cpDob" class="form__date" placeholder="Date of Birth">
+                                </div>
                             </div>
-                            <div class="contact-form__group">
-                                <textarea id="contactMessage" rows="5" placeholder="Your Message" required></textarea>
+
+                            <!-- Message -->
+                            <div class="form__row">
+                                <div class="form__group form__group--full-width">
+                                    <textarea id="cpMessage" class="form__textarea" placeholder="Type your message"
+                                        rows="4"></textarea>
+                                </div>
                             </div>
-                            <button type="submit" class="contact-form__submit">Send Message &rarr;</button>
+
+                            <!-- Submit -->
+                            <div class="form__row">
+                                <button type="submit" class="form__submit-btn">Send Message &rarr;</button>
+                            </div>
+
                         </form>
                     </div>
 
                     <!-- Right: Details & Map -->
                     <div class="contact-details-wrapper fade-in">
+
+                        <!-- Location -->
                         <div class="contact-info-block">
-                            <h4>Location</h4>
-                            <p>Eravathody Handloom Weavers' Co-operative Society<br>Thiruvilwamala, Thrissur<br>Kerala, India - 680588</p>
+                            <div class="contact-info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Location</h4>
+                                <p>Eravathody Handloom Weavers'<br>Co-operative Society<br>Thiruvilwamala, Thrissur<br>Kerala, India — 680 588</p>
+                            </div>
                         </div>
+
+                        <!-- Phone -->
                         <div class="contact-info-block">
-                            <h4>Contact Info</h4>
-                            <p>Email: eravathody@gmail.com<br>Phone: +91 98765 43210</p>
+                            <div class="contact-info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Call Us</h4>
+                                <p><a href="tel:+914884282038">04884 282 038</a></p>
+                            </div>
                         </div>
+
+                        <!-- Email -->
                         <div class="contact-info-block">
-                            <h4>Operating Hours</h4>
-                            <p>Monday - Saturday: 9:00 AM - 5:00 PM<br>Sunday: Closed</p>
+                            <div class="contact-info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:eravathody@gmail.com">eravathody@gmail.com</a></p>
+                            </div>
                         </div>
-                        
-                        <div class="contact-map">
-                            <!-- Placeholder Map. In a real scenario, use actual embedded Google Maps iframe -->
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15694.045050518335!2d76.3888365!3d10.7458129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7d0b30d3cbac5%3A0x8e87491cf3bcbc24!2sThiruvilwamala%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                        <!-- Hours -->
+                        <div class="contact-info-block">
+                            <div class="contact-info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Working Hours</h4>
+                                <p>Monday – Saturday: 9:00 AM – 5:00 PM<br>Sunday: Closed</p>
+                            </div>
                         </div>
+
                     </div>
 
                 </div>
+            </div>
+        </section>
+
+        <!-- Find Us In — Full-Width Map Section -->
+        <section class="find-us-section">
+            <div class="find-us-header">
+                <span class="find-us-label">Find Us In</span>
+            </div>
+            <div class="find-us-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15694.045050518335!2d76.3888365!3d10.7458129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7d0b30d3cbac5%3A0x8e87491cf3bcbc24!2sThiruvilwamala%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Eravathody Handloom Weavers location map">
+                </iframe>
             </div>
         </section>
 
@@ -129,10 +242,11 @@
         <section class="faq-section fade-in">
             <div class="container">
                 <div class="faq-header">
+                    <span class="faq-eyebrow">Have Questions?</span>
                     <h2>Frequently Asked Questions</h2>
                 </div>
                 <div class="faq-list">
-                    
+
                     <div class="faq-item">
                         <div class="faq-question">
                             <h4>Do you offer international shipping?</h4>
@@ -170,6 +284,16 @@
                         </div>
                         <div class="faq-answer">
                             <p>Handloom fabrics, especially those with pure Kasavu (zari), require gentle care. We recommend dry cleaning for the first few washes. If washing at home, use mild shampoo or soap nut, wash separately in cold water, and dry in the shade to preserve the colors and the golden zari.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Can I place a custom or bulk order?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely. We accept custom orders for sarees, dhotis, and yardage. For institutional or bulk requirements, please contact us directly at eravathody@gmail.com or call 04884 282 038 and we will work with you to meet your needs.</p>
                         </div>
                     </div>
 
@@ -227,8 +351,9 @@
         </div>
     </footer>
 
-    <!-- Link external JS -->
-    <script src="../about/about.js"></script>
+    <!-- Scripts -->
     <script src="contact.js"></script>
+    <script src="../about/about.js"></script>
+
 </body>
 </html>
