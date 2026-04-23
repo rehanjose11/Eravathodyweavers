@@ -1170,7 +1170,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('../homepage/banner1.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../homepage/banner1.jpg') no-repeat center center/cover;
 }
 
 .craft-hero__title {
