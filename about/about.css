@@ -2041,13 +2041,14 @@ p {
 }
 
 .flipbook-section {
-    padding-bottom: 0;
+    padding-top: 80px !important;
+    padding-bottom: 0 !important;
 }
 
 /* Flipbook section header */
 .flipbook-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 .flipbook-header h2 {
