@@ -1352,7 +1352,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../homepage/hero.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../homepage/exploregallery.jpeg') no-repeat center center/cover;
 }
 
 .gallery-hero__title {
@@ -1387,11 +1387,13 @@ p {
     overflow: hidden;
     aspect-ratio: 1/1;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.12s ease-out;
+    content-visibility: auto;
+    contain-intrinsic-size: 360px 360px;
 }
 
 .gallery-grid__item:hover {
-    transform: scale(1.02);
+    transform: scale(1.08);
 }
 
 .gallery-grid__item img {
@@ -1399,35 +1401,11 @@ p {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
+    transition: none;
 }
 
 .gallery-grid__item:hover img {
-    transform: scale(1.1);
-}
-
-.gallery-grid__overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    padding: 30px 20px 20px 20px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.gallery-grid__item:hover .gallery-grid__overlay {
-    opacity: 1;
-}
-
-.gallery-grid__caption {
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    color: #ffffff;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    margin: 0;
+    transform: none;
 }
 
 .gallery-categories {
@@ -1508,6 +1486,8 @@ p {
     font-size: 18px;
     text-align: center;
     letter-spacing: 1px;
+    min-height: 0;
+    display: none;
 }
 
 .lightbox__nav-btn {

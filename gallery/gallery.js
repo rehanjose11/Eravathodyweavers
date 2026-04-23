@@ -60,21 +60,6 @@ if (contactForm) {
     });
 }
 
-// NEWSLETTER: SUBSCRIBE POP-UP
-const newsletterBtn = document.querySelector('.newsletter__btn');
-if (newsletterBtn) {
-    newsletterBtn.addEventListener('click', function () {
-        const input = document.querySelector('.newsletter__input');
-        if (input && input.value.trim() !== '') {
-            window.alert("Subscribed!");
-            input.value = '';
-            input.style.background = 'transparent';
-        } else {
-            window.alert("Please enter your email to subscribe.");
-        }
-    });
-}
-
 // NAV SEARCH: TOGGLE VISIBILITY
 const searchToggle = document.querySelector('.search-toggle');
 const searchBar = document.querySelector('.header__search-bar');
@@ -195,10 +180,58 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
 (function() {
     const lightboxModal = document.getElementById('lightboxModel');
     const lightboxImg = document.getElementById('lightboxImage');
-    const lightboxCaption = document.getElementById('lightboxCaption');
     const closeBtn = document.getElementById('closeLightboxModel');
     const prevBtn = document.getElementById('lightboxPrev');
     const nextBtn = document.getElementById('lightboxNext');
+    const galleryGrid = document.getElementById('galleryGrid');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+
+    const galleryImages = [
+        '30 Images/DSC00654.JPG',
+        '30 Images/DSC00697_final.jpg',
+        '30 Images/DSC00701.png',
+        '30 Images/DSC00786.jpg',
+        '30 Images/DSC00827.jpg',
+        '30 Images/DSC00899.jpg',
+        '30 Images/DSC02102.JPG',
+        '30 Images/DSC02107.JPG',
+        '30 Images/DSC02132.JPG',
+        '30 Images/DSC02162.jpg',
+        '30 Images/DSC02209.jpg',
+        '30 Images/DSC02218.jpg',
+        '30 Images/DSC02246.jpg',
+        '30 Images/DSC02446.jpg',
+        '30 Images/DSC02757.jpg',
+        '30 Images/DSC02936.jpg',
+        '30 Images/DSC03062.jpg',
+        '30 Images/DSC04217.JPG',
+        '30 Images/DSC04386.jpg',
+        '30 Images/DSC04420.jpg',
+        '30 Images/DSC04613.JPG',
+        '30 Images/DSC04615.JPG',
+        '30 Images/DSC04713.jpg',
+        '30 Images/DSC04722.JPG',
+        '30 Images/_DSC6682.jpg',
+        '30 Images/_DSC7013.jpg',
+        '30 Images/_DSC7354.jpg',
+        '30 Images/_MG_9878.jpg',
+        '30 Images/eravathodi.png'
+    ];
+
+    if (galleryGrid) {
+        galleryGrid.innerHTML = galleryImages.map(function (src, index) {
+            const isPriority = index < 6;
+            return (
+                '<div class="gallery-grid__item" data-index="' + index + '">' +
+                    '<img src="' + src + '" alt="Gallery image ' + (index + 1) + '" ' +
+                        'loading="' + (isPriority ? 'eager' : 'lazy') + '" ' +
+                        'decoding="async" ' +
+                        'fetchpriority="' + (isPriority ? 'high' : 'low') + '">' +
+                '</div>'
+            );
+        }).join('');
+    }
+
     const galleryItems = document.querySelectorAll('.gallery-grid__item');
     
     if (!lightboxModal || galleryItems.length === 0) return;
@@ -209,10 +242,9 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
         currentIndex = index;
         const item = galleryItems[currentIndex];
         const img = item.querySelector('img');
-        const caption = item.querySelector('.gallery-grid__caption');
         
         if (img) lightboxImg.src = img.src;
-        if (caption) lightboxCaption.textContent = caption.textContent;
+        if (lightboxCaption) lightboxCaption.textContent = '';
         
         lightboxModal.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -244,6 +276,18 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
             openLightbox(currentIndex);
         });
     }
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightboxModal.classList.contains('active')) return;
+        if (e.key === 'ArrowLeft' && prevBtn) {
+            prevBtn.click();
+        } else if (e.key === 'ArrowRight' && nextBtn) {
+            nextBtn.click();
+        } else if (e.key === 'Escape') {
+            lightboxModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 
     lightboxModal.addEventListener('click', (e) => {
         if (e.target === lightboxModal || e.target.classList.contains('lightbox__content') || e.target.classList.contains('lightbox__image-wrapper')) {
