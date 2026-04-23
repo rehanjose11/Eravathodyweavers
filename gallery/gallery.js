@@ -221,9 +221,10 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
     if (galleryGrid) {
         galleryGrid.innerHTML = galleryImages.map(function (src, index) {
             const isPriority = index < 6;
+            const thumbSrc = src.replace('30 Images/', '30 Images/thumbs/');
             return (
                 '<div class="gallery-grid__item" data-index="' + index + '">' +
-                    '<img src="' + src + '" alt="Gallery image ' + (index + 1) + '" ' +
+                    '<img src="' + thumbSrc + '" data-full-src="' + src + '" alt="Gallery image ' + (index + 1) + '" ' +
                         'loading="' + (isPriority ? 'eager' : 'lazy') + '" ' +
                         'decoding="async" ' +
                         'fetchpriority="' + (isPriority ? 'high' : 'low') + '">' +
@@ -243,7 +244,7 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
         const item = galleryItems[currentIndex];
         const img = item.querySelector('img');
         
-        if (img) lightboxImg.src = img.src;
+        if (img) lightboxImg.src = img.dataset.fullSrc || img.src;
         if (lightboxCaption) lightboxCaption.textContent = '';
         
         lightboxModal.classList.add('active');
