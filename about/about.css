@@ -1721,6 +1721,7 @@ p {
     left: 10%; /* start slightly offset */
     transition: transform 0.1s ease-out;
     align-items: center;
+    width: max-content;
 }
 
 .timeline-track::before {
@@ -1732,7 +1733,7 @@ p {
     height: 2px;
     background: #C2A24D;
     transform: translateY(-50%);
-    z-index: 0;
+    z-index: -1;
 }
 
 .timeline-item {
@@ -1740,8 +1741,7 @@ p {
     margin-right: 50px;
     padding: 40px;
     background: #fff;
-    border-top: 4px solid #C2A24D;
-    opacity: 0.4;
+    border-top: 4px solid rgba(194, 162, 77, 0.4);
     transform: scale(0.85);
     transition: all 0.4s ease;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
@@ -1749,12 +1749,20 @@ p {
     z-index: 1;
 }
 
+.timeline-item > * {
+    opacity: 0.4;
+    transition: opacity 0.4s ease;
+}
+
 .timeline-item.active {
-    opacity: 1;
     transform: scale(1.05);
     box-shadow: 0 15px 40px rgba(194, 162, 77, 0.3), 0 0 20px rgba(194, 162, 77, 0.2);
     z-index: 10;
-    border-color: #A0833C;
+    border-top-color: #A0833C;
+}
+
+.timeline-item.active > * {
+    opacity: 1;
 }
 
 .timeline-year {
