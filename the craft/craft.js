@@ -193,49 +193,97 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
 
 // PROCESS STICKY SCROLL LOGIC
 (function() {
-    const steps = document.querySelectorAll('.process-scroll-step');
-    const progressBar = document.getElementById('processProgressBar');
-    
-    if (steps.length === 0 || !progressBar) return;
+    const steps         = document.querySelectorAll('.process-scroll-step');
+    const progressBar   = document.getElementById('processProgressBar');
+    const progressTrack = document.querySelector('.process-progress-track');
+    const processSection= document.querySelector('.process-scroll-container');
+    const stepsSide     = document.querySelector('.process-steps-side');
 
-    let targetProgress = 0;
-    let currentProgress = 0;
+    if (!steps.length || !progressBar || !processSection || !stepsSide) return;
 
-    window.addEventListener('scroll', () => {
-        let activeIndex = 0;
-        let minDistance = Infinity;
-        const viewportCenter = window.innerHeight / 2;
+    // --- Create the single travelling dot ---
+    const dot = document.createElement('div');
+    dot.className = 'process-line-dot';
+    stepsSide.appendChild(dot);
 
-        steps.forEach((step, index) => {
-            const rect = step.getBoundingClientRect();
-            // Distance from the center of the step to the center of the viewport
-            const stepCenter = rect.top + rect.height / 2;
-            const distance = Math.abs(viewportCenter - stepCenter);
-            
-            if (distance < minDistance) {
-                minDistance = distance;
-                activeIndex = index;
-            }
-        });
+    // Lerp state
+    let dotTarget  = 0;
+    let dotCurrent = 0;
+    let barTarget  = 0;
+    let barCurrent = 0;
 
-        // Highlight the closest step
-        steps.forEach((step, index) => {
-            if (index === activeIndex) {
-                step.classList.add('active');
-            } else {
-                step.classList.remove('active');
-            }
-        });
+    function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
 
-        // Update target progress
-        targetProgress = (activeIndex / (steps.length - 1)) * 100;
-    });
-
-    // Lerp loop for smooth progress bar transition
-    function smoothProgress() {
-        currentProgress += (targetProgress - currentProgress) * 0.08;
-        progressBar.style.height = `${currentProgress}%`;
-        requestAnimationFrame(smoothProgress);
+    // Get the vertical center of a step relative to stepsSide
+    // offsetTop is stable — not affected by page scroll
+    function stepCenterRel(step) {
+        return step.offsetTop + step.offsetHeight / 2;
     }
-    smoothProgress();
+
+    // Initialise dot to first step center on load
+    function initDot() {
+        const start = stepCenterRel(steps[0]);
+        dotTarget  = start;
+        dotCurrent = start;
+    }
+
+    // --- Core update: called on every scroll event ---
+    function update() {
+        const vpMid = window.innerHeight / 2;
+
+        // Show / hide fixed right-side progress bar:
+        // visible only while scrolling through the steps (first step in view → last step in view)
+        if (progressTrack) {
+            const firstR = steps[0].getBoundingClientRect();
+            const lastR  = steps[steps.length - 1].getBoundingClientRect();
+            const inView = firstR.bottom > 0 && lastR.top < window.innerHeight;
+            progressTrack.classList.toggle('visible', inView);
+        }
+
+        // Where is vpMid between the center of step[0] and center of step[last]?
+        // Using getBoundingClientRect for the RATIO (viewport-relative, changes with scroll — correct)
+        const firstRect = steps[0].getBoundingClientRect();
+        const lastRect  = steps[steps.length - 1].getBoundingClientRect();
+        const firstMid  = firstRect.top  + firstRect.height  / 2;
+        const lastMid   = lastRect.top   + lastRect.height   / 2;
+        const range     = lastMid - firstMid;
+        const ratio     = range === 0 ? 0 : clamp((vpMid - firstMid) / range, 0, 1);
+
+        // Map ratio to LAYOUT positions (offsetTop-based, stable) of first and last step centers
+        // This ensures the dot is geometrically aligned with the cards, not hardcoded px offsets
+        const dotStart = stepCenterRel(steps[0]);
+        const dotEnd   = stepCenterRel(steps[steps.length - 1]);
+        dotTarget  = dotStart + ratio * (dotEnd - dotStart);
+        barTarget  = ratio * 100;
+
+        // Active step highlight (border colour only — discrete)
+        let activeIndex = 0;
+        let minDist = Infinity;
+        steps.forEach((step, i) => {
+            const mid = step.getBoundingClientRect().top + step.getBoundingClientRect().height / 2;
+            const d   = Math.abs(mid - vpMid);
+            if (d < minDist) { minDist = d; activeIndex = i; }
+        });
+        steps.forEach((step, i) => step.classList.toggle('active', i === activeIndex));
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('load', () => { initDot(); update(); });
+
+    // --- RAF lerp loop ---
+    const progressEl = document.querySelector('.process-progress');
+
+    function animate() {
+        dotCurrent += (dotTarget - dotCurrent) * 0.14;
+        dot.style.top = `${dotCurrent}px`;
+
+        barCurrent += (barTarget - barCurrent) * 0.1;
+        progressBar.style.height = `${barCurrent}%`;
+        if (progressEl) progressEl.style.setProperty('--dot-pos', `${barCurrent}%`);
+
+        requestAnimationFrame(animate);
+    }
+    animate();
 })();
+
+

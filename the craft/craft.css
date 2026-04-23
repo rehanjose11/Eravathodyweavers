@@ -1193,39 +1193,32 @@ p {
 .process-scroll-container {
     background-color: #F4F1EA;
     position: relative;
+    padding: 100px 0 140px;
 }
 
-.process-scroll-wrapper {
-    display: flex;
-    position: relative;
-    align-items: flex-start;
+/* Fixed right-side progress bar — pinned to right edge of viewport */
+.process-progress-track {
+    position: fixed;
+    top: 50%;
+    right: 28px;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 200px;
+    pointer-events: none;
+    z-index: 100;
+    display: none; /* shown via JS when section is in view */
 }
 
-.process-sticky-side {
-    position: sticky;
-    top: 150px;
-    width: 40%;
-    padding-right: 60px;
-    height: calc(100vh - 200px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.process-sticky-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    color: #4A372E;
-    margin-bottom: 20px;
+.process-progress-track.visible {
+    display: block;
 }
 
 .process-progress {
     width: 4px;
-    height: 200px;
+    height: 100%;
     background: #e0d9cc;
-    margin-top: 40px;
-    position: relative;
     border-radius: 2px;
+    position: relative;
 }
 
 .process-progress-bar {
@@ -1239,21 +1232,117 @@ p {
     transition: height 0.1s ease-out;
 }
 
+/* Dot indicator at current progress position */
+.process-progress::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #C2A24D;
+    top: var(--dot-pos, 0%);
+    margin-top: -5px;
+    transition: top 0.1s ease-out;
+}
+
+.process-scroll-wrapper {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+}
+
+.process-sticky-side {
+    position: sticky;
+    top: 150px;
+    width: 42%;
+    padding-right: 20px;
+    height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.process-sticky-content {
+    max-width: 620px;
+    margin-left: 0;
+    transform: translateX(-90px);
+}
+
+.process-sticky-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: #4A372E;
+    margin-bottom: 20px;
+}
+
+/* Steps side — shifted right with more left padding */
 .process-steps-side {
-    width: 60%;
-    padding: 100px 0 200px 0;
+    width: 58%;
+    padding: 100px 20px 40px 120px;
+    position: relative;
+}
+
+/* Vertical connector line — spans the full card area */
+.process-steps-side::before {
+    content: '';
+    position: absolute;
+    left: 80px;
+    top: 100px;    /* matches padding-top: first card starts here */
+    bottom: 40px;  /* matches padding-bottom: last card ends here */
+    width: 2px;
+    background: linear-gradient(to bottom, #e0d9cc, #C2A24D 25%, #C2A24D 75%, #e0d9cc);
+    border-radius: 2px;
+    z-index: 0;
 }
 
 .process-scroll-step {
-    padding: 60px 50px;
+    padding: 40px 46px;
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    margin-bottom: 80vh; /* Space them out for scrolling */
-    opacity: 0.3;
-    transform: scale(0.95);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+    margin-bottom: 32px; /* Reduced gap between cards */
+    opacity: 0.35;
+    transform: scale(0.97) translateX(10px);
     transition: all 0.5s ease;
     border-left: 4px solid transparent;
+    position: relative;
+    z-index: 1;
+}
+
+/* Single travelling dot that moves along the connector line */
+.process-line-dot {
+    position: absolute;
+    left: 80px;      /* same as the line's left: 80px */
+    margin-left: -7px; /* half of 14px width — centers dot on line */
+    top: 0;          /* JS controls this via style.top */
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #C2A24D;
+    box-shadow: 0 0 0 5px rgba(194, 162, 77, 0.2);
+    /* NO CSS transition — JS lerp handles all smoothing */
+    z-index: 3;
+    pointer-events: none;
+    will-change: top;
+}
+
+.process-step__image-placeholder {
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 20px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.process-step__image-placeholder img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
 }
 
 .process-scroll-step:last-child {
@@ -1262,29 +1351,30 @@ p {
 
 .process-scroll-step.active {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateX(0);
     border-left-color: #C2A24D;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.09);
 }
 
 .process-step__number {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 64px;
+    font-size: 56px;
     color: #C2A24D;
     font-weight: 600;
     line-height: 1;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .process-step__title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
+    font-size: 32px;
     color: #4A372E;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     font-weight: 600;
 }
 
 .process-step__text {
-    font-size: 17px;
+    font-size: 16.5px;
     color: #5C5C5C;
     line-height: 1.8;
     max-width: 100%;
@@ -1293,6 +1383,39 @@ p {
 
 .philosophy-section {
     position: relative;
+}
+
+.philosophy-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.philosophy-section h2 {
+    text-align: center;
+}
+
+.philosophy-section .about__description {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+}
+
+.philosophy-image {
+    width: 100%;
+    max-width: 900px;
+    margin: 10px auto 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.philosophy-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 /* =========================================
