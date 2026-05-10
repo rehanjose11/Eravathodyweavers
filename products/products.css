@@ -59,8 +59,8 @@
 /* ── Intro ── */
 .products-intro {
     padding: 80px 0;
-    background-color: #FAF8F3;
-    background-image: linear-gradient(rgba(250, 248, 243, 0.95), rgba(250, 248, 243, 0.95)), url('../backdrop.png');
+    background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -103,7 +103,11 @@
 }
 
 .products-category-section--alt {
-    background-color: #ffffff;
+    background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .category-header {

@@ -1267,10 +1267,7 @@ p {
 
 .full-gallery {
     background-color: #F4F1EA;
-    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: none;
 }
 
 .gallery-grid {
