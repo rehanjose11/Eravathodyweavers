@@ -153,15 +153,23 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
     track.scrollLeft = totalOriginals * itemWidth;
 
     // ---- Infinite loop: silently jump when reaching cloned zones ----
+    var scrollTimeout;
     track.addEventListener('scroll', function () {
-        var min = itemWidth;                               // one item before real start
-        var max = (totalOriginals * 2) * itemWidth;       // one item before real end (clones)
+        window.clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function () {
+            var min = itemWidth;                               // one item before real start
+            var max = (totalOriginals * 2) * itemWidth;       // one item before real end (clones)
 
-        if (track.scrollLeft <= min) {
-            track.scrollLeft += totalOriginals * itemWidth;
-        } else if (track.scrollLeft >= max) {
-            track.scrollLeft -= totalOriginals * itemWidth;
-        }
+            if (track.scrollLeft <= min) {
+                track.style.scrollBehavior = 'auto';
+                track.scrollLeft += totalOriginals * itemWidth;
+                track.offsetHeight; // force reflow
+            } else if (track.scrollLeft >= max) {
+                track.style.scrollBehavior = 'auto';
+                track.scrollLeft -= totalOriginals * itemWidth;
+                track.offsetHeight; // force reflow
+            }
+        }, 100); // Wait 100ms after scroll stops to jump silently
     }, { passive: true });
 
     // ---- Mouse drag to scroll ----
@@ -198,7 +206,42 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
         });
     }
 
-    // Initial highlight
-    highlightCenter();
+    // highlightCenter(); // Commented out to fix ReferenceError
 }());
 
+// LIGHTBOX: POLAROID & ARTISAN IMAGES
+const polaroidImg = document.querySelector('.about__polaroid img');
+const artisanImg = document.querySelector('.artisan-photo');
+const lightboxModel = document.getElementById('lightboxModel');
+const lightboxImage = document.getElementById('lightboxImage');
+const closeLightboxModelBtn = document.getElementById('closeLightboxModel');
+
+if (lightboxModel && lightboxImage && closeLightboxModelBtn) {
+    if (polaroidImg) {
+        polaroidImg.addEventListener('click', function () {
+            lightboxImage.src = this.src;
+            lightboxModel.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    if (artisanImg) {
+        artisanImg.addEventListener('click', function () {
+            lightboxImage.src = this.src;
+            lightboxModel.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    closeLightboxModelBtn.addEventListener('click', function () {
+        lightboxModel.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    lightboxModel.addEventListener('click', function (e) {
+        if (e.target === lightboxModel || e.target.classList.contains('lightbox__content') || e.target.classList.contains('lightbox__image-wrapper')) {
+            lightboxModel.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}

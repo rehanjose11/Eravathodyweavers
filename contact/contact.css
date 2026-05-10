@@ -39,6 +39,10 @@
 .contact-section {
     padding: 80px 0 100px;
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .contact-grid {
@@ -237,6 +241,10 @@
 .faq-section {
     padding: 80px 0 100px;
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .faq-header {

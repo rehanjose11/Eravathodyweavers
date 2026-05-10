@@ -20,6 +20,7 @@
 
     <!-- Link external CSS -->
     <link rel="stylesheet" href="homepage/homepage.css">
+    <link rel="stylesheet" href="chatbot.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
 </head>
@@ -141,7 +142,7 @@
         </section>
 
         <!-- ===== PRODUCT EXPLORATION SECTION ===== -->
-        <section class="gallery">
+        <section class="gallery" id="products">
             <div class="gallery__header">
                 <h2 class="gallery__heading">Our Products</h2>
                 <p class="gallery__subheading">A glimpse into the fine weaves and pure kasavu crafted on our looms in
@@ -329,6 +330,40 @@
             </div>
         </div>
 
+        <!-- Lightbox Model for Polaroid -->
+        <div id="lightboxModel" class="model">
+            <button id="closeLightboxModel" class="model__close-btn" aria-label="Close Lightbox">&times;</button>
+            <div class="lightbox__content">
+                <div class="lightbox__image-wrapper">
+                    <img id="lightboxImage" src="" alt="Gallery Image Full" class="lightbox__image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Peeli Bot Launcher -->
+        <div class="peeli-bot" id="peeliBot">
+            <button class="peeli-bot__launcher" id="peeliBotToggle" type="button" aria-controls="peeliBotPanel"
+                aria-expanded="false">
+                <img src="homepage/peeli-bot.svg" alt="Peacock mascot for Peeli Bot" class="peeli-bot__mascot">
+                <span class="peeli-bot__copy">
+                    <span class="peeli-bot__label">Tap for</span>
+                    <span class="peeli-bot__name">Peeli Bot</span>
+                </span>
+            </button>
+            <div class="peeli-bot__panel" id="peeliBotPanel" aria-hidden="true">
+                <button class="peeli-bot__close" id="peeliBotClose" type="button" aria-label="Close Peeli Bot">×</button>
+                <p class="peeli-bot__eyebrow">Peeli Bot</p>
+                <p class="peeli-bot__message" id="peeliBotMessage" aria-live="polite">Hi, I am Peeli Bot. Type a question about the website and I will answer it.</p>
+                <div class="peeli-bot__chat" id="peeliBotChat" aria-label="Chat conversation" aria-live="polite">
+                    <div class="peeli-bot__bubble peeli-bot__bubble--bot">I can help with products, craft, weavers, gallery, about, and contact.</div>
+                </div>
+                <div class="peeli-bot__composer">
+                    <input class="peeli-bot__input" id="peeliBotInput" type="text" placeholder="Type your message">
+                    <button class="peeli-bot__send" id="peeliBotSend" type="button">Send</button>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- Site Footer: Secondary Navigation, Address, and Legal Elements -->
@@ -385,7 +420,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Link external JS -->
+    <script src="chatbot.js"></script>
     <script src="homepage/homepage.js"></script>
+    <script src="search.js"></script>
 </body>
 
 </html>

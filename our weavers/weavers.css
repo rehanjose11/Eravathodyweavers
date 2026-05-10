@@ -16,6 +16,10 @@
 /* Default theme */
 body {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #1C1C1C;
     font-family: 'Syne', sans-serif;
     font-weight: 400;
@@ -36,6 +40,10 @@ body {
 
 .bg-light {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .text-center {
@@ -333,6 +341,10 @@ p {
     justify-content: center;
     align-items: center;
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     /* ensures it looks slightly distinct */
     position: relative;
     overflow: hidden;
@@ -535,6 +547,10 @@ p {
 /* 7. ARTISAN SHOWCASE SECTION (.artisan-section) */
 .artisan-section {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -585,6 +601,10 @@ p {
 /* 8. PRODUCT GALLERY SECTION (.gallery) */
 .gallery {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 80px 0;
     position: relative;
     /* Kasavu: double gold stripe on top and bottom */
@@ -941,6 +961,10 @@ p {
 
 .mission-section {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .mission-content {
@@ -1032,6 +1056,10 @@ p {
 
 .craft-intro {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .craft-intro-content {
@@ -1041,6 +1069,10 @@ p {
 
 .process-section {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .process-step {
@@ -1100,6 +1132,10 @@ p {
 
 .weavers-intro {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .weavers-intro-content {
@@ -1109,6 +1145,12 @@ p {
 
 .featured-weavers {
     background-color: #F4F1EA;
+    background-image: none;
+}
+
+.weavers-profiles {
+    background-color: #F4F1EA;
+    background-image: none;
 }
 
 .weavers-grid {
@@ -1128,11 +1170,17 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
 
 .weaver-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+}
+
+.weaver-card:focus {
+    outline: 2px solid #C2A24D;
+    outline-offset: 4px;
 }
 
 .weaver-card__img-wrapper {
@@ -1176,6 +1224,25 @@ p {
     padding-top: 20px;
     width: 100%;
     margin-top: auto;
+}
+
+.weaver-profile-card {
+    background: #ffffff;
+    padding: 18px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-width: 520px;
+    width: 100%;
+    max-height: 85vh;
+}
+
+.weaver-profile-card__image {
+    display: block;
+    width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #f4f1ea;
 }
 
 @media (max-width: 900px) {
@@ -1233,6 +1300,10 @@ p {
 
 .gallery-intro {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .gallery-intro-content {
@@ -1242,6 +1313,10 @@ p {
 
 .full-gallery {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .gallery-grid {
@@ -1335,3 +1410,64 @@ p {
     line-height: 1.7;
     margin: 0;
 }
+
+/* =========================================
+   COMMUNITY IMAGE LIGHTBOX
+   ========================================= */
+.artisan-photo {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artisan-photo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+#weaversImgLightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+#weaversImgLightbox.active {
+    display: flex;
+}
+
+#weaversImgLightbox .lightbox-inner {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+#weaversImgLightbox .lightbox-inner img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    display: block;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+#weaversImgLightbox .lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    font-family: 'Syne', sans-serif;
+}
+
+#weaversImgLightbox .lightbox-close:hover {
+    opacity: 1;
+}
+

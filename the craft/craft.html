@@ -17,6 +17,7 @@
 
     <!-- Link external CSS -->
     <link rel="stylesheet" href="craft.css">
+    <link rel="stylesheet" href="../chatbot.css">
     <link rel="stylesheet" href="../navbar.css">
     <link rel="stylesheet" href="../footer.css">
 </head>
@@ -318,6 +319,14 @@
 
     </main>
 
+    <!-- Philosophy Image Lightbox -->
+    <div id="craftImgLightbox">
+        <div class="lightbox-inner">
+            <button class="lightbox-close" id="closeCraftLightbox" aria-label="Close image">&times;</button>
+            <img id="craftLightboxImg" src="" alt="Deiva Thozhil — the divine craft">
+        </div>
+    </div>
+
     <!-- Site Footer: Secondary Navigation, Address, and Legal Elements -->
     <footer class="footer">
         <div class="footer__top">
@@ -368,7 +377,9 @@
     </footer>
 
     <!-- Link external JS -->
+    <script src="../chatbot.js"></script>
     <script src="craft.js"></script>
+    <script src="../search.js"></script>
 </body>
 
 </html>

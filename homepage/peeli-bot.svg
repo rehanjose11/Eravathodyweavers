@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Peeli Bot peacock mascot</title>
+  <desc id="desc">A stylized peacock mascot with gold and teal feathers.</desc>
+  <defs>
+    <linearGradient id="tailGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f8a70"/>
+      <stop offset="55%" stop-color="#2a6f7d"/>
+      <stop offset="100%" stop-color="#c2a24d"/>
+    </linearGradient>
+    <radialGradient id="bodyGlow" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#f4f1ea"/>
+      <stop offset="100%" stop-color="#c2a24d"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="240" height="240" rx="120" fill="#f4f1ea"/>
+  <g transform="translate(20 8)">
+    <path d="M100 32c-10 16-14 33-12 50 4 30 28 48 63 48 16 0 33-4 47-10-10 18-28 31-49 35-34 7-67-7-84-35-18-30-12-69 15-97 7-7 15-10 20-9z" fill="url(#tailGlow)" opacity="0.18"/>
+
+    <g transform="translate(14 6)">
+      <path d="M66 56c22-19 52-23 82-11 24 10 40 28 46 50-15 1-30-2-44-10-10-6-20-14-29-25-10 16-23 29-40 39-13 8-28 13-43 14 6-21 14-39 28-57z" fill="#1f8a70" opacity="0.15"/>
+      <circle cx="86" cy="108" r="33" fill="url(#bodyGlow)"/>
+      <circle cx="101" cy="98" r="22" fill="#ffffff" opacity="0.18"/>
+      <ellipse cx="96" cy="120" rx="18" ry="20" fill="#4a372e"/>
+      <circle cx="82" cy="104" r="4" fill="#1c1c1c"/>
+      <circle cx="94" cy="104" r="4" fill="#1c1c1c"/>
+      <path d="M91 110c4 3 9 3 13 0" fill="none" stroke="#1c1c1c" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M86 130c-9 19-22 38-39 52" fill="none" stroke="#4a372e" stroke-width="7" stroke-linecap="round"/>
+      <path d="M106 131c11 18 18 34 22 51" fill="none" stroke="#4a372e" stroke-width="7" stroke-linecap="round"/>
+      <path d="M111 132c19 2 33 2 49-2" fill="none" stroke="#c2a24d" stroke-width="5" stroke-linecap="round"/>
+      <path d="M80 77c-17-17-29-32-37-50" fill="none" stroke="#1f8a70" stroke-width="8" stroke-linecap="round"/>
+      <path d="M86 73c-9-20-11-38-7-55" fill="none" stroke="#2a6f7d" stroke-width="6" stroke-linecap="round"/>
+      <path d="M93 75c4-19 13-34 26-45" fill="none" stroke="#c2a24d" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="45" cy="24" r="10" fill="#1f8a70"/>
+      <circle cx="58" cy="10" r="9" fill="#c2a24d"/>
+      <circle cx="71" cy="18" r="7" fill="#2a6f7d"/>
+      <circle cx="54" cy="36" r="6" fill="#f4f1ea" opacity="0.7"/>
+      <circle cx="42" cy="48" r="5" fill="#c2a24d"/>
+      <circle cx="18" cy="38" r="5" fill="#2a6f7d"/>
+      <path d="M67 55c18-10 32-14 48-14" fill="none" stroke="#f4f1ea" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <path d="M33 22c10 12 22 21 37 27" fill="none" stroke="#f4f1ea" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    </g>
+  </g>
+</svg>

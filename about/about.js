@@ -268,3 +268,31 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
         });
     }
 })();
+
+// MUDALIYAR IMAGE LIGHTBOX
+(function() {
+    const img = document.querySelector('.about__plain-img');
+    const lightbox = document.getElementById('aboutImgLightbox');
+    const lightboxImg = document.getElementById('aboutLightboxImg');
+    const closeBtn = document.getElementById('closeAboutLightbox');
+
+    if (!img || !lightbox || !lightboxImg || !closeBtn) return;
+
+    img.addEventListener('click', function() {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+})();

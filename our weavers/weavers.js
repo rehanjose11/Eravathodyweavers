@@ -124,6 +124,67 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
     });
 }
 
+// ARTISAN PROFILE PREVIEW
+(function () {
+    const profileModal = document.getElementById('weaverProfileModel');
+    const profileImage = document.getElementById('weaverProfileImage');
+    const closeProfileBtn = document.getElementById('closeWeaverProfileModel');
+    const cards = document.querySelectorAll('.weaver-card');
+
+    if (!profileModal || !profileImage || !closeProfileBtn || cards.length === 0) {
+        return;
+    }
+
+    function openProfile(card) {
+        const img = card.querySelector('img');
+        if (!img) return;
+
+        profileImage.src = img.src;
+        profileImage.alt = img.alt || 'Artisan profile image';
+        profileModal.classList.add('active');
+        profileModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeProfileBtn.focus();
+    }
+
+    function closeProfile() {
+        profileModal.classList.remove('active');
+        profileModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    cards.forEach(function (card) {
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', 'Open artisan profile image');
+
+        card.addEventListener('click', function () {
+            openProfile(card);
+        });
+
+        card.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openProfile(card);
+            }
+        });
+    });
+
+    closeProfileBtn.addEventListener('click', closeProfile);
+
+    profileModal.addEventListener('click', function (e) {
+        if (e.target === profileModal) {
+            closeProfile();
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && profileModal.classList.contains('active')) {
+            closeProfile();
+        }
+    });
+}());
+
 // PRODUCT GALLERY: infinite loop + center highlight
 (function () {
     var track = document.getElementById('galleryTrack');
@@ -189,3 +250,30 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
     highlightCenter();
 }());
 
+// COMMUNITY IMAGE LIGHTBOX (A Community of Craftspeople)
+(function() {
+    const img = document.querySelector('.artisan-photo');
+    const lightbox = document.getElementById('weaversImgLightbox');
+    const lightboxImg = document.getElementById('weaversLightboxImg');
+    const closeBtn = document.getElementById('closeWeaversLightbox');
+
+    if (!img || !lightbox || !lightboxImg || !closeBtn) return;
+
+    img.addEventListener('click', function() {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+})();

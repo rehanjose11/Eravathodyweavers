@@ -16,6 +16,10 @@
 /* Default theme */
 body {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #1C1C1C;
     font-family: 'Syne', sans-serif;
     font-weight: 400;
@@ -36,6 +40,10 @@ body {
 
 .bg-light {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .text-center {
@@ -333,6 +341,10 @@ p {
     justify-content: center;
     align-items: center;
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     /* ensures it looks slightly distinct */
     position: relative;
     overflow: hidden;
@@ -535,6 +547,10 @@ p {
 /* 7. ARTISAN SHOWCASE SECTION (.artisan-section) */
 .artisan-section {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -585,6 +601,10 @@ p {
 /* 8. PRODUCT GALLERY SECTION (.gallery) */
 .gallery {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 80px 0;
     position: relative;
     /* Kasavu: double gold stripe on top and bottom */
@@ -941,6 +961,10 @@ p {
 
 .mission-section {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .mission-content {
@@ -1032,6 +1056,10 @@ p {
 
 .craft-intro {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .craft-intro-content {
@@ -1041,6 +1069,10 @@ p {
 
 .process-section {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .process-step {
@@ -1100,6 +1132,10 @@ p {
 
 .weavers-intro {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .weavers-intro-content {
@@ -1109,6 +1145,10 @@ p {
 
 .featured-weavers {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .weaver-profile {
@@ -1214,6 +1254,10 @@ p {
 
 .gallery-intro {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .gallery-intro-content {
@@ -1223,6 +1267,10 @@ p {
 
 .full-gallery {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .gallery-grid {

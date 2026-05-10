@@ -287,3 +287,30 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
 })();
 
 
+// PHILOSOPHY IMAGE LIGHTBOX (More Than a Process)
+(function() {
+    const img = document.querySelector('.philosophy-image img');
+    const lightbox = document.getElementById('craftImgLightbox');
+    const lightboxImg = document.getElementById('craftLightboxImg');
+    const closeBtn = document.getElementById('closeCraftLightbox');
+
+    if (!img || !lightbox || !lightboxImg || !closeBtn) return;
+
+    img.addEventListener('click', function() {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+})();

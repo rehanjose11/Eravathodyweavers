@@ -17,6 +17,7 @@
 
     <!-- Link external CSS -->
     <link rel="stylesheet" href="weavers.css">
+    <link rel="stylesheet" href="../chatbot.css">
     <link rel="stylesheet" href="../navbar.css">
     <link rel="stylesheet" href="../footer.css">
 </head>
@@ -216,6 +217,16 @@
             </div>
         </section>
 
+        <!-- Artisan Profile Modal -->
+        <div id="weaverProfileModel" class="model" aria-hidden="true">
+            <div class="model__content">
+                <button id="closeWeaverProfileModel" class="model__close-btn" aria-label="Close profile">&times;</button>
+                <div class="model__card weaver-profile-card">
+                    <img id="weaverProfileImage" src="" alt="" class="weaver-profile-card__image">
+                </div>
+            </div>
+        </div>
+
         <!-- Community Section -->
         <section class="community-section section-padding bg-light">
             <div class="about__decorative">
@@ -337,6 +348,14 @@
 
     </main>
 
+    <!-- Community Image Lightbox -->
+    <div id="weaversImgLightbox">
+        <div class="lightbox-inner">
+            <button class="lightbox-close" id="closeWeaversLightbox" aria-label="Close image">&times;</button>
+            <img id="weaversLightboxImg" src="" alt="Eravathody Community">
+        </div>
+    </div>
+
     <!-- Site Footer: Secondary Navigation, Address, and Legal Elements -->
     <footer class="footer">
         <div class="footer__top">
@@ -387,7 +406,9 @@
     </footer>
 
     <!-- Link external JS -->
+    <script src="../chatbot.js"></script>
     <script src="weavers.js"></script>
+    <script src="../search.js"></script>
 </body>
 
 </html>

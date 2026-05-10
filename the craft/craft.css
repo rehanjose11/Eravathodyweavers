@@ -16,6 +16,10 @@
 /* Default theme */
 body {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #1C1C1C;
     font-family: 'Syne', sans-serif;
     font-weight: 400;
@@ -36,6 +40,10 @@ body {
 
 .bg-light {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .text-center {
@@ -333,6 +341,10 @@ p {
     justify-content: center;
     align-items: center;
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     /* ensures it looks slightly distinct */
     position: relative;
     overflow: hidden;
@@ -535,6 +547,10 @@ p {
 /* 7. ARTISAN SHOWCASE SECTION (.artisan-section) */
 .artisan-section {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -585,6 +601,10 @@ p {
 /* 8. PRODUCT GALLERY SECTION (.gallery) */
 .gallery {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 80px 0;
     position: relative;
     /* Kasavu: double gold stripe on top and bottom */
@@ -941,6 +961,10 @@ p {
 
 .mission-section {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .mission-content {
@@ -1032,6 +1056,10 @@ p {
 
 .craft-intro {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .craft-intro-content {
@@ -1041,6 +1069,7 @@ p {
 
 .process-scroll-container {
     background-color: #F4F1EA;
+    background-image: none;
     position: relative;
     padding: 100px 0 140px;
 }
@@ -1265,6 +1294,13 @@ p {
     height: auto;
     display: block;
     object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.philosophy-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* =========================================
@@ -1288,6 +1324,10 @@ p {
 
 .weavers-intro {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .weavers-intro-content {
@@ -1297,6 +1337,10 @@ p {
 
 .featured-weavers {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .weaver-profile {
@@ -1402,6 +1446,10 @@ p {
 
 .gallery-intro {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .gallery-intro-content {
@@ -1411,6 +1459,10 @@ p {
 
 .full-gallery {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .gallery-grid {
@@ -1503,4 +1555,54 @@ p {
     color: #5C5C5C;
     line-height: 1.7;
     margin: 0;
+}
+
+/* =========================================
+   PHILOSOPHY IMAGE LIGHTBOX
+   ========================================= */
+#craftImgLightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+#craftImgLightbox.active {
+    display: flex;
+}
+
+#craftImgLightbox .lightbox-inner {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+#craftImgLightbox .lightbox-inner img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    display: block;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+#craftImgLightbox .lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    font-family: 'Syne', sans-serif;
+}
+
+#craftImgLightbox .lightbox-close:hover {
+    opacity: 1;
 }

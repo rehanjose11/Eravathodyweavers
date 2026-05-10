@@ -16,6 +16,10 @@
 /* Default theme */
 body {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #1C1C1C;
     font-family: 'Syne', sans-serif;
     font-weight: 400;
@@ -36,6 +40,10 @@ body {
 
 .bg-light {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .text-center {
@@ -240,7 +248,7 @@ p {
 
 .hero__subtitle {
     font-family: 'Syne', sans-serif;
-    font-size: 24px;
+    font-size: 26px;
     margin-top: 10px;
     margin-bottom: 10px;
     /* Reduced further to pull the title closer */
@@ -250,7 +258,7 @@ p {
 
 .hero__title {
     font-family: 'MenckenStdHead', serif;
-    font-size: 96px;
+    font-size: 104px;
     /* Increased from 4.5rem */
     /* Large imposing text */
     font-weight: bold;
@@ -264,7 +272,7 @@ p {
 
 .hero__description {
     font-family: 'Syne', sans-serif;
-    font-size: 19.2px;
+    font-size: 21px;
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
     max-width: 700px;
@@ -286,7 +294,7 @@ p {
     opacity: 0.8;
     z-index: 10;
     /* Ensure it stays above other things */
-    cursor: pointer;
+    cursor: default;
 }
 
 .hero__swipe-text {
@@ -333,6 +341,10 @@ p {
     justify-content: center;
     align-items: center;
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     /* ensures it looks slightly distinct */
     position: relative;
     overflow: hidden;
@@ -489,6 +501,7 @@ p {
     font-size: 12.5px;
     letter-spacing: 0.8px;
     margin-top: 10px;
+    background-color: transparent;
 }
 
 .btn.craft-banner-btn:hover {
@@ -522,19 +535,31 @@ p {
 }
 
 .btn-outline {
-    background-color: transparent;
+    background-color: #F4F1EA;
     color: #4A372E;
     border: 1px solid #C2A24D;
+}
+
+.about .btn-outline,
+.artisan-section .btn-outline,
+.gallery .btn-outline,
+.bg-light .btn-outline {
+    background-color: #E6DED2;
 }
 
 .btn-outline:hover {
     background-color: #C2A24D;
     color: #F4F1EA;
+    border-color: #C2A24D;
 }
 
 /* 7. ARTISAN SHOWCASE SECTION (.artisan-section) */
 .artisan-section {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -576,6 +601,12 @@ p {
     height: auto;
     display: block;
     object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.artisan-photo:hover {
+    transform: scale(1.02);
 }
 
 .artisan-btn {
@@ -585,6 +616,10 @@ p {
 /* 8. PRODUCT GALLERY SECTION (.gallery) */
 .gallery {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: 80% center;
+    background-repeat: no-repeat;
     padding: 80px 0;
     position: relative;
     /* Kasavu: double gold stripe on top and bottom */
@@ -878,6 +913,18 @@ p {
     margin-bottom: 40px;
 }
 
+.contact-banner .btn-outline {
+    background-color: transparent !important;
+    border: 1px solid #C2A24D !important;
+    color: #ffffff !important;
+}
+
+.contact-banner .btn-outline:hover {
+    background-color: #C2A24D !important;
+    border-color: #C2A24D !important;
+    color: #000000 !important;
+}
+
 .contact-banner__info .small-uppercase {
     font-family: 'Syne', sans-serif;
     font-size: 14px;
@@ -1114,6 +1161,10 @@ p {
 
 .mission-section {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .mission-content {
@@ -1205,6 +1256,10 @@ p {
 
 .craft-intro {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .craft-intro-content {
@@ -1214,6 +1269,10 @@ p {
 
 .process-section {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .process-step {
@@ -1273,6 +1332,10 @@ p {
 
 .weavers-intro {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .weavers-intro-content {
@@ -1282,6 +1345,10 @@ p {
 
 .featured-weavers {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .weaver-profile {
@@ -1387,6 +1454,10 @@ p {
 
 .gallery-intro {
     background-color: #E6DED2;
+    background-image: linear-gradient(rgba(230, 222, 210, 0.95), rgba(230, 222, 210, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .gallery-intro-content {
@@ -1396,6 +1467,10 @@ p {
 
 .full-gallery {
     background-color: #F4F1EA;
+    background-image: linear-gradient(rgba(244, 241, 234, 0.95), rgba(244, 241, 234, 0.95)), url('../backdrop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .gallery-grid {
@@ -1488,4 +1563,51 @@ p {
     color: #5C5C5C;
     line-height: 1.7;
     margin: 0;
+}
+/* =========================================
+   12. LIGHTBOX STYLES (POLAROID)
+   ========================================= */
+#lightboxModel {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.lightbox__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 80vh;
+    gap: 20px;
+}
+
+.lightbox__image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    height: 100%;
+}
+
+.lightbox__image {
+    max-width: 100%;
+    max-height: calc(100% - 40px);
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: 2px solid #C2A24D;
+}
+
+#closeLightboxModel {
+    top: 20px;
+    right: 30px;
+    font-size: 50px;
+}
+
+.about__polaroid {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.about__polaroid:hover {
+    transform: scale(1.02) rotate(-2deg);
 }
