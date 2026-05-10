@@ -246,8 +246,7 @@ if (contactModel && openContactModelBtn && closeContactModelBtn) {
         track.scrollLeft = scrollStart - (x - startX) * 1.5;
     });
 
-    // Initial highlight
-    highlightCenter();
+    // Initial setup complete
 }());
 
 // COMMUNITY IMAGE LIGHTBOX (A Community of Craftspeople)
