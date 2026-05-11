@@ -35,6 +35,8 @@
     height: 44px;
     flex: 0 0 44px;
     display: block;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .peeli-bot__copy {

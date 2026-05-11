@@ -5,8 +5,103 @@
     }
 
     var scriptBase = getScriptBase();
-    var mascotSrc = new URL('homepage/peeli-bot.svg', scriptBase).href;
+    var mascotSrc = new URL('peeliboticon.jpg', scriptBase).href;
     var pageBase = scriptBase;
+
+    var TOPIC_RULES = [
+        {
+            key: 'home',
+            page: 'index.html',
+            openReply: 'Opening the homepage.',
+            reply: 'The homepage introduces Eravathody Handloom Weavers in Thiruvilwamala and points to the main sections of the site.',
+            keywords: ['home page', 'homepage', 'landing page', 'main page', 'home']
+        },
+        {
+            key: 'about',
+            page: 'about/about.html',
+            openReply: 'Opening the About page.',
+            reply: 'The About page explains the history of Eravathody, the weaving community, and how the society has grown since 1941.',
+            keywords: ['about page', 'about us', 'our story', 'history', 'heritage', 'origin', 'legacy', 'society formed', '1941', 'mudaliyar']
+        },
+        {
+            key: 'craft',
+            page: 'the craft/craft.html',
+            openReply: 'Opening the Craft page.',
+            reply: 'The Craft page shows the weaving process, including winding, warping, dyeing, and loom work.',
+            keywords: ['craft page', 'the craft', 'weaving process', 'loom', 'weaving', 'thread', 'warp', 'warping', 'winding', 'dyeing', 'process']
+        },
+        {
+            key: 'weavers',
+            page: 'our weavers/weavers.html',
+            openReply: 'Opening the Our Weavers page.',
+            reply: 'The Our Weavers page introduces the artisans who keep the handloom tradition alive through generations.',
+            keywords: ['our weavers', 'weavers page', 'weaver', 'weavers', 'artisan', 'artisans', 'members', 'profile']
+        },
+        {
+            key: 'products',
+            page: 'products/products.html',
+            openReply: 'Opening the Products page.',
+            reply: 'The Products page features Kasavu sarees, Set Mundu, Double Mundu, and other handwoven fabrics made at Eravathody.',
+            keywords: ['products page', 'products', 'product', 'kasavu', 'set mundu', 'double mundu', 'saree', 'sarees', 'mundu', 'fabric', 'fabrics', 'yardage']
+        },
+        {
+            key: 'gallery',
+            page: 'gallery/gallery.html',
+            openReply: 'Opening the Gallery page.',
+            reply: 'The Gallery page shows the weaving society, fabrics, and visual moments from the craft.',
+            keywords: ['gallery page', 'gallery', 'photo', 'photos', 'image', 'images', 'picture', 'pictures', 'visual']
+        },
+        {
+            key: 'contact',
+            page: 'contact/contact.html',
+            openReply: 'Opening the Contact page.',
+            reply: 'The Contact page has the office address, phone number, email, and location details in Thiruvilwamala.',
+            keywords: ['contact page', 'contact us', 'phone', 'address', 'location', 'email', 'reach', 'visit', 'call us']
+        }
+    ];
+
+    function normalizeText(text) {
+        return String(text || '')
+            .toLowerCase()
+            .replace(/[^a-z0-9\s]/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function containsAny(text, terms) {
+        for (var i = 0; i < terms.length; i += 1) {
+            if (text.indexOf(terms[i]) !== -1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function scoreTopic(text, rule) {
+        var score = 0;
+        for (var i = 0; i < rule.keywords.length; i += 1) {
+            if (text.indexOf(rule.keywords[i]) !== -1) {
+                score += rule.keywords[i].split(' ').length;
+            }
+        }
+        return score;
+    }
+
+    function pickTopic(text) {
+        var bestRule = null;
+        var bestScore = 0;
+
+        for (var i = 0; i < TOPIC_RULES.length; i += 1) {
+            var rule = TOPIC_RULES[i];
+            var score = scoreTopic(text, rule);
+            if (score > bestScore) {
+                bestScore = score;
+                bestRule = rule;
+            }
+        }
+
+        return bestRule;
+    }
 
     function pageUrl(path) {
         return new URL(path, pageBase).href;
@@ -49,78 +144,56 @@
     }
 
     function resolvePageTarget(text) {
-        var lower = text.toLowerCase();
-        var wantsOpen = /(open|go to|show|load|visit|take me)/.test(lower);
+        var lower = normalizeText(text);
+        var wantsOpen = containsAny(lower, [
+            'open',
+            'go to',
+            'go',
+            'show',
+            'load',
+            'visit',
+            'take me',
+            'take me to',
+            'navigate',
+            'direct',
+            'bring me',
+            'move me',
+            'lead me'
+        ]);
 
         if (!wantsOpen) {
             return null;
         }
 
-        if (/(home|homepage|main page)/.test(lower)) {
-            return { url: 'index.html', reply: 'Opening the homepage.' };
-        }
-        if (/(about|story|history)/.test(lower)) {
-            return { url: 'about/about.html', reply: 'Opening the about page.' };
-        }
-        if (/(craft|weaving|loom|thread|process)/.test(lower)) {
-            return { url: 'the craft/craft.html', reply: 'Opening the craft page.' };
-        }
-        if (/(weaver|weavers|artisan|artisans)/.test(lower)) {
-            return { url: 'our weavers/weavers.html', reply: 'Opening the our weavers page.' };
-        }
-        if (/(product|products|kasavu|mundu|saree|sarees|fabric|fabrics)/.test(lower)) {
-            return { url: 'products/products.html', reply: 'Opening the products page.' };
-        }
-        if (/(gallery|photo|photos|image|images|picture|pictures)/.test(lower)) {
-            return { url: 'gallery/gallery.html', reply: 'Opening the gallery page.' };
-        }
-        if (/(contact|visit|address|phone|location|reach)/.test(lower)) {
-            return { url: 'contact/contact.html', reply: 'Opening the contact page.' };
+        var topic = pickTopic(lower);
+        if (topic) {
+            return { url: topic.page, reply: topic.openReply };
         }
 
         return null;
     }
 
     function getAssistantReply(text) {
-        var lower = text.toLowerCase();
+        var lower = normalizeText(text);
 
         if (!lower.trim()) {
             return 'Type a question about the website, or ask me to open a page.';
         }
 
-        if (/(hello|hi|hey)\b/.test(lower)) {
+        if (containsAny(lower, ['hello', 'hi', 'hey', 'namaste'])) {
             return 'Hello. I can help with products, craft, weavers, gallery, about, contact, or opening pages.';
         }
 
-        if (/(home|homepage|main page)/.test(lower)) {
-            return 'The homepage introduces Eravathody Handloom Weavers in Thiruvilwamala, Kerala, with the main story, products, craft, and contact access.';
+        var topic = pickTopic(lower);
+        if (topic) {
+            return topic.reply;
         }
 
-        if (/(about|story|history)/.test(lower)) {
-            return 'The About page explains the heritage of Eravathody, including the weaving community, the origins of the society, and the tradition sustained since 1941.';
+        if (containsAny(lower, ['what', 'how', 'where', 'who', 'when', 'why', 'which'])) {
+            return 'Ask me about a site topic like home, about, craft, weavers, products, gallery, or contact. I can also open those pages for you.';
         }
 
-        if (/(craft|weaving|loom|thread|process)/.test(lower)) {
-            return 'The Craft page shows how handloom fabric is made, from raw materials and winding to weaving and finishing.';
-        }
-
-        if (/(weaver|weavers|artisan|artisans)/.test(lower)) {
-            return 'The Our Weavers page introduces the skilled artisans who keep the loom tradition alive through generations.';
-        }
-
-        if (/(product|products|kasavu|mundu|saree|sarees|fabric|fabrics)/.test(lower)) {
-            return 'The Products page features Kasavu sarees, Set Mundu, Double Mundu, and other handwoven fabrics made at Eravathody.';
-        }
-
-        if (/(gallery|photo|photos|image|images|picture|pictures)/.test(lower)) {
-            return 'The Gallery page shows the weaving society, fabrics, and visual moments from the craft.';
-        }
-
-        if (/(contact|visit|address|phone|location|reach)/.test(lower)) {
-            return 'The Contact page has the office address, phone details, and a way to reach the society in Thiruvilwamala.';
-        }
-
-        return 'I can help with home, about, craft, weavers, products, gallery, contact, or opening a page. Try asking a specific question about the website.';
+        return 'I can help with home, about, craft, weavers, products, gallery, contact, or opening a page. Try asking about one of those sections.';
     }
 
     function initWidget(root) {

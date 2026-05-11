@@ -92,3 +92,39 @@ if (enquiryForm) {
         }, 2000);
     });
 }
+
+// PRODUCT IMAGE LIGHTBOX
+const lightboxModel = document.getElementById('lightboxModel');
+const lightboxImage = document.getElementById('lightboxImage');
+const closeLightboxModelBtn = document.getElementById('closeLightboxModel');
+const productImages = document.querySelectorAll('.product-card__image');
+
+if (lightboxModel && lightboxImage && closeLightboxModelBtn) {
+    productImages.forEach(img => {
+        img.addEventListener('click', function () {
+            lightboxImage.src = this.src;
+            lightboxModel.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    closeLightboxModelBtn.addEventListener('click', function () {
+        lightboxModel.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    lightboxModel.addEventListener('click', function (e) {
+        if (e.target === lightboxModel || e.target.classList.contains('lightbox__content') || e.target.classList.contains('lightbox__image-wrapper')) {
+            lightboxModel.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lightboxModel.classList.contains('active')) {
+            lightboxModel.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
